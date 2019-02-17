@@ -1,0 +1,493 @@
+// out: ../css/sunder.min.css, compress: true, sourceMap: false
+
+.fluid-type(@property, @min-vw, @max-vw, @min-size, @max-size) {
+	@{property}: @min-size;
+	@media screen and (min-width: @min-vw) {
+		@{property}: calc( @min-size ~" + " unit(@max-size - @min-size) ~" * ((100vw - " @min-vw ~") /" unit(@max-vw - @min-vw) ~")" );
+	}
+	@media screen and (min-width: @max-vw) {
+		@{property}: @max-size;
+	}
+}
+
+
+@trans: rgba(0, 0, 0, 0.7);
+@black: #222;
+@white: #DDD;
+@gray: #888;
+@darkgray: #333;
+
+@cyan: aqua;
+@blue: steelblue;
+@green: greenyellow;
+@red: red;
+@violet: rebeccapurple;
+@yellow: yellow;
+@orange: orange;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*:hover, *:active, *:focus, *::-moz-focus-inner {
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Palanquin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkslategray;
+
+    .fluid-type(font-size, 576px, 1200px, 16px, 20px);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    transition: 300ms;
+    background-color: @black;
+    z-index: 999;
+    overflow-x: hidden;
+
+    .wrap {
+        width: 200px;
+    }
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        background-color: @black;
+
+        .toggle {
+            display: flex;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background-color: @black;
+            color: @blue;
+            border: none;
+            border-left: 5px solid @gray;
+            cursor: pointer;
+            transition: 300ms;
+
+            &:hover, &:active, &:focus {
+                border-top: 2px solid #13771e;
+                border-bottom: 2px solid #13771e;
+                border-left-color: #13771e;
+            }
+            
+            span {
+                top: 28px;
+                left: 19px;
+                right: 50px;
+                transition: 300ms;
+
+                &, &::before, &::after {
+                    display: block;
+                    position: absolute;
+                    height: 3px;
+                    width: 26px;
+                    background-color: @white;
+                    content: '';
+                    transition: 300ms;
+                }
+
+                &::before {
+                    top: -7px;
+                    left: 0px;
+                }
+
+                &::after {
+                    bottom: -7px;
+                    left: 0px;
+                }
+            }
+
+            p {
+                position: absolute;
+                left: 60px;
+                font-size: 1.5em;
+                line-height: 55px;
+                color: @white;
+                pointer-events: none;
+            }
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 60px;
+            cursor: pointer;
+    
+            a {
+                font-size: 0.95em;
+                font-weight: 500;
+                letter-spacing: 1.46px;
+                text-transform: uppercase;
+                color: @white;
+            }
+
+            i {
+                justify-content: center;
+                align-items: center;
+                width: 60px;
+                height: 60px;
+                font-size: 1.28em;
+                border-left: 5px solid @gray;
+                background-color: @black;
+                color: @white;
+                transition: 300ms;
+
+                &.fas, &.fab {
+                    display: flex;
+                }
+
+                &.fa-app-store {
+                    font-size: 1.5em;
+                }
+
+                &.fa-video {
+                    font-size: 1.25em;
+                }
+            }
+
+            &:hover, &:active, &:focus {
+                i {
+                    border-left: 5px solid;
+
+                    &.fa-app-store {
+                        border-color: @cyan;
+                        color: @cyan;
+                    }
+
+                    &.fa-edge {
+                        border-color: @blue;
+                        color: @blue;
+                    }
+
+                    &.fa-gamepad {
+                        border-color: @green;
+                        color: @green;
+                    }
+
+                    &.fa-headphones {
+                        border-color: @red;
+                        color: @red;
+                    }
+
+                    &.fa-video {
+                        border-color: @violet;
+                        color: @violet;
+                    }
+
+                    &.fa-images {
+                        border-color: @orange;
+                        color: @orange;
+                    }
+
+                    &.fa-camera {
+                        border-color: @yellow;
+                        color: @yellow;
+                    }
+                }
+            }
+        }    
+    }
+
+    &.show {
+        width: 200px;
+        .head {
+            .toggle {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        ul {
+            li {
+                i {
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &:hover, &:active, &:focus, &.show {
+        .head {
+            .toggle {
+                span {
+                    border-top-right-radius: 2px;
+                    border-bottom-left-radius: 2px;
+                    &::before {
+                        transform: matrix(1, 0, -1, 1, 2, 0);
+                        border-top-left-radius: 2px;
+                    }
+                    &::after {
+                        transform: matrix(1, 0, -1, 1, -2, 0);
+                        border-bottom-right-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 999;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#343a40+0,343a40+45,13771e+50,343a40+55,343a40+100 */
+    background: #343a40; /* Old browsers */
+    background: -moz-linear-gradient(left, #343a40 0%, #343a40 45%, #13771e 50%, #343a40 55%, #343a40 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #343a40 0%,#343a40 45%,#13771e 50%,#343a40 55%,#343a40 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #343a40 0%,#343a40 45%,#13771e 50%,#343a40 55%,#343a40 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#343a40', endColorstr='#343a40',GradientType=1 ); /* IE6-9 */
+} 
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 60px;
+    top: 2px;
+    width: ~"calc(100% - 60px)";
+    height: ~"calc(100% - 2px)";
+
+    button {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        background-color: transparent;
+        border: none;
+
+        span {
+            top: 50%;
+            left: 50%;
+            right: 50px;
+            transform: translate(-50%, -50%);
+            transition: 300ms;
+            border-top-right-radius: 38px;
+            border-bottom-left-radius: 38px;        
+    
+            &, &::before, &::after {
+                display: block;
+                position: absolute;
+                height: 57px;
+                width: 494px;
+                background-color: @darkgray;
+                content: '';
+                transition: 300ms;
+            }
+    
+            &::before {
+                top: -100px;
+                left: 0px;
+                transform: matrix(1, 0, -1, 1, 38, 0);
+                border-top-left-radius: 38px;        
+            }
+    
+            &::after {
+                bottom: -100px;
+                left: 0px;
+                transform: matrix(1, 0, -1, 1, -38, 0);
+                border-bottom-right-radius: 38px;        
+            }
+        }
+    }
+}
+
+.container {
+    position: fixed;
+    top: 2px;
+    left: 60px;
+    width: ~"calc(100% - 60px)";
+    height: ~"calc(100% - 2px)";
+    padding: 10px;
+    overflow-y: auto;
+    transform: translateX(-100%);
+
+    &.open {
+        transform: translateX(0%);
+        transition: 300ms;
+    }
+
+    &.hide {
+        transform: translateX(100%);
+    }
+}
+
+
+// Apps
+.apps-grid {
+    display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(0px, 350px));
+	grid-auto-rows: 600px;
+	grid-auto-flow: row dense;
+    justify-content: center;
+
+    .app {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 350px;
+        height: 600px;
+        padding: 15px;
+        border-radius: 15px;
+        color: @white;
+        background-color: @black;
+
+        h3 {
+            margin: 0;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .action {
+            border: 2px solid @blue;
+            border-radius: 15px;
+            padding: 5px 15px;
+            transition: 300ms;
+            cursor: pointer;
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: @white;
+                font-size: 1.12em;
+                cursor: pointer;
+            }
+
+            &:hover, &:active, &:focus {
+                background-color: @blue;
+
+                button {
+                    color: @black;
+                }
+
+                i {
+                    color: @black;
+                }
+            }
+        }
+    }
+}
+
+// Web
+.web-grid {
+    display: grid;
+    grid-gap: 20px;
+    justify-content: center;
+
+    .web {
+        position: relative;
+        border-radius: 15px;
+        color: @white;
+        background-color: @trans;
+        max-width: 800px;
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+
+            h3 {
+                margin: 0;
+            }
+
+            h4 {
+                margin: 0;
+            }
+
+            input {
+                
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        iframe {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+    }
+}
+
+
+// Audio
+.sc-grid {
+	display: grid;
+	grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 600px));
+	grid-auto-rows: 400px;
+	grid-auto-flow: row dense;
+    justify-content: center;
+    
+    iframe {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+    }
+}
+
+// Video 
+.yt-grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 600px));
+	grid-auto-rows: 340px;
+	grid-auto-flow: row dense;
+    justify-content: center;
+    
+    iframe {
+        width: 100%;
+        max-width: 600px;
+        height: 340px;
+    }
+}
+
+.graphic-grid {
+
+}
+
+.photo-grid {
+
+}
