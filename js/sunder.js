@@ -38,7 +38,7 @@ $under.web = $under.web || {
     update: function (e) {
         var $this = $(this),
             checked = $this.is(':checked'),
-            $iframe = $this.parent().siblings('iframe');
+            $iframe = $this.parent().parent().siblings('iframe');
         $('.web-grid iframe').attr('src', '');
         if (checked) {
             $iframe.attr('src', $iframe.data('src'));
