@@ -56,9 +56,7 @@ $under.$erver = $under.$erver || {
         }).then((ret1) => Promise.all(lib));
     },
 
-    nav: function () {
-        var index = $(this).index(),
-            page = $(this).data('page');
+    navigate: function (page, index) {
         $('.container.open').addClass('hide')
         setTimeout(function () { $('.container.open.hide').removeClass('open').removeClass('hide'); }, 300);
         if ($under.$erver.cache[index]) {
@@ -66,7 +64,13 @@ $under.$erver = $under.$erver || {
         } else {
             $under.$erver.get(page, index);
         }
-        $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/');
+        $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/', index);
+    },
+
+    nav: function () {
+        var index = $(this).index(),
+            page = $(this).data('page');
+        $under.$erver.navigate(page, index);
     },
 
     events: function () {

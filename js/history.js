@@ -6,14 +6,17 @@ $under.history = $under.history || {
         return document.location;
     },
 
-    push: function (title, url) {
-        history.pushState({ page: url }, title, url);
+    push: function (title, url, index) {
+        console.log(url);
+        console.log(window.location);
+        history.pushState({ page: url, index: index }, title, url);
     },
 
     pop: function (e) {
-        console.log(e);
-        console.log(e.originalEvent.state);
-        console.log($under.history.location());
+        var state = e.originalEvent.state,
+            page = state.page,
+            index = page.index;
+        $under.$erver.navigate(page, index);
     },
 
     events: function () {
