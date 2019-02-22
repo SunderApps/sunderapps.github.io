@@ -29,16 +29,17 @@ $under.$erver = $under.$erver || {
     },
 
     nav: function () {
-        var index = $(this).index();
+        var index = $(this).index(),
+            page = $(this).data('page');
         $('.container.open').addClass('hide')
         setTimeout(function () { $('.container.open.hide').removeClass('open').removeClass('hide'); }, 300);
         if ($under.$erver.cache[index]) {
             $under.$erver.open(index);
         } else {
-            var file = $(this).data('file');
+            var file = '/views/' + page + '.html';
             $under.$erver.get(file, index);
         }
-        $under.history.push($(this).data('title'), $(this).data('url'));
+        $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/');
     },
 
     events: function () {
