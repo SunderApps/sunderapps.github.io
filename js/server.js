@@ -38,6 +38,7 @@ $under.$erver = $under.$erver || {
             var file = $(this).data('file');
             $under.$erver.get(file, index);
         }
+        history.pushState({ page: $(this).data('url') }, $(this).data('title'), $(this).data('url'));
     },
 
     events: function () {
