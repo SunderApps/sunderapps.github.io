@@ -10,8 +10,12 @@ $under.history = $under.history || {
 
     pop: function (e) {
         var state = e.originalEvent.state,
+            page = 'home',
+            index = -1;
+        if (state) {
             page = state.page.substr(1, state.page.length - 2),
             index = page.index;
+        }
         $under.$erver.navigate(page, index);
     },
 

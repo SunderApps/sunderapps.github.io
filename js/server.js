@@ -59,12 +59,17 @@ $under.$erver = $under.$erver || {
     navigate: function (page, index) {
         $('.container.open').addClass('hide')
         setTimeout(function () { $('.container.open.hide').removeClass('open').removeClass('hide'); }, 300);
-        if ($under.$erver.cache[index]) {
-            $under.$erver.open(index);
+        if (index !== -1) {
+            if ($under.$erver.cache[index]) {
+                $under.$erver.open(index);
+            } else {
+                $under.$erver.get(page, index);
+            }
+            $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/', index);    
         } else {
-            $under.$erver.get(page, index);
+            document.title = 'Sunder';
+            // Change META
         }
-        $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/', index);
     },
 
     nav: function () {
