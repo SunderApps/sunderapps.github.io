@@ -2,14 +2,10 @@ var $under = $under || {};
 $under.history = $under.history || {
     state: {},
 
-    location: function () {
-        return document.location;
-    },
-
     push: function (title, url, index) {
-        console.log(url);
-        console.log(window.location.pathname);
-        history.pushState({ page: url, index: index }, title, url);
+        if (url.toUpperCase() !== window.location.pathname.toUpperCase()) {
+            history.pushState({ page: url, index: index }, title, url);
+        }
     },
 
     pop: function (e) {
