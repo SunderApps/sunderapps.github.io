@@ -12,7 +12,7 @@ $under.history = $under.history || {
 
     pop: function (e) {
         console.log(e);
-        console.log(e.state);
+        console.log(e.originalEvent.state);
         console.log($under.history.location());
     },
 
