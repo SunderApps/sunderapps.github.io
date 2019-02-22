@@ -8,13 +8,13 @@ $under.history = $under.history || {
 
     push: function (title, url, index) {
         console.log(url);
-        console.log(window.location);
+        console.log(window.location.pathname);
         history.pushState({ page: url, index: index }, title, url);
     },
 
     pop: function (e) {
         var state = e.originalEvent.state,
-            page = state.page,
+            page = state.page.substr(1, state.page.length - 2),
             index = page.index;
         $under.$erver.navigate(page, index);
     },
