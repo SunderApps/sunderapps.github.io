@@ -8,7 +8,7 @@ $under.$erver = $under.$erver || {
 
     open: function (index) {
         if ($under.$erver.cache.head[index] && $under.$erver.cache.content[index]) {
-            $('head').html($under.$erver.cache.head[index]);
+            $('#head').html($under.$erver.cache.head[index]);
             $under.$erver.cache.content[index].removeClass('hide').addClass('open');
         }
     },
