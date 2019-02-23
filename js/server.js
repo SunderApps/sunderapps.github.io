@@ -43,7 +43,7 @@ $under.$erver = $under.$erver || {
                     $under.$erver.loadHead(html, index);
                     console.log('headSuccess');
                     res2('headSuccess');
-                }, 'html').error(function () {
+                }, 'html').fail(function () {
                     console.log('headFail');
                     res2('headFail');
                 });    
@@ -53,7 +53,7 @@ $under.$erver = $under.$erver || {
                     $under.$erver.loadScript(html, index);
                     console.log('scriptSuccess');
                     res3('script');
-                }, 'html').error(function () {
+                }, 'html').fail(function () {
                     console.log('scriptFail');
                     res3('scriptFail');
                 });    
