@@ -1,0 +1,24 @@
+//out: false
+@trans: rgba(0, 0, 0, 0.7);
+@black: #222;
+@white: #DDD;
+@gray: #888;
+@darkgray: #333;
+
+@cyan: aqua;
+@blue: steelblue;
+@green: greenyellow;
+@red: red;
+@violet: rebeccapurple;
+@yellow: yellow;
+@orange: orange;
+
+.fluid-type(@property, @min-vw, @max-vw, @min-size, @max-size) {
+	@{property}: @min-size;
+	@media screen and (min-width: @min-vw) {
+		@{property}: calc( @min-size ~" + " unit(@max-size - @min-size) ~" * ((100vw - " @min-vw ~") /" unit(@max-vw - @min-vw) ~")" );
+	}
+	@media screen and (min-width: @max-vw) {
+		@{property}: @max-size;
+	}
+}
