@@ -133,45 +133,47 @@ nav {
         list-style: none;
 
         li {
-            display: flex;
-            align-items: center;
-            position: relative;
             height: 60px;
             cursor: pointer;
+            transition: filter 300ms;
     
             a {
+                display: flex;
+                align-items: center;
                 font-size: 0.95em;
                 font-weight: 500;
                 letter-spacing: 1.46px;
                 text-transform: uppercase;
                 color: @white;
-            }
 
-            i {
-                justify-content: center;
-                align-items: center;
-                width: 60px;
-                height: 60px;
-                font-size: 1.28em;
-                border-left: 5px solid @gray;
-                background-color: @black;
-                color: @white;
-                transition: 300ms;
-
-                &.fas, &.fab {
-                    display: flex;
-                }
-
-                &.fa-app-store {
-                    font-size: 1.5em;
-                }
-
-                &.fa-video {
-                    font-size: 1.25em;
+                i {
+                    justify-content: center;
+                    align-items: center;
+                    width: 60px;
+                    height: 60px;
+                    font-size: 1.28em;
+                    border-left: 5px solid @gray;
+                    background-color: @black;
+                    color: @white;
+                    transition: 300ms;
+    
+                    &.fas, &.fab {
+                        display: flex;
+                    }
+    
+                    &.fa-app-store {
+                        font-size: 1.5em;
+                    }
+    
+                    &.fa-video {
+                        font-size: 1.25em;
+                    }
                 }
             }
 
             &:hover, &:active, &:focus {
+                filter: brightness(0.8);
+
                 i {
                     border-left: 5px solid;
 
