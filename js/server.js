@@ -37,35 +37,18 @@ $under.$erver = $under.$erver || {
     },
 
     get: function (page, index) {
-        var lib = [
-            new Promise((res2, rej2) => {
-                $.get('/views/head/' + page + '.html', function (html) {
-                    $under.$erver.loadHead(html, index);
-                    console.log('headSuccess');
-                    res2('headSuccess');
-                }, 'html').fail(function () {
-                    console.log('headFail');
-                    res2('headFail');
-                });    
-            }), 
-            new Promise((res3, rej3) => {
-                $.get('/views/script/' + page + '.html', function (html) {
-                    $under.$erver.loadScript(html, index);
-                    console.log('scriptSuccess');
-                    res3('script');
-                }, 'html').fail(function () {
-                    console.log('scriptFail');
-                    res3('scriptFail');
-                });    
-            })
-        ];
-        var con = new Promise((res1, rej1) => {
-            $.get('/views/content/' + page + '.html', function (html) {
-                $under.$erver.loadContent(html);
-                console.log('content');
-                res1('content');
-            }, 'html');
-        });
+        $.get('/views/content/' + page + '.html', function (html) {
+            $under.$erver.loadContent(html, index);
+            console.log('content');
+            $.get('/views/head/' + page + '.html', function (html) {
+                $under.$erver.loadHead(html, index);
+                console.log('headSuccess');
+            }, 'html');    
+            $.get('/views/script/' + page + '.html', function (html) {
+                $under.$erver.loadScript(html, index);
+                console.log('scriptSuccess');
+            }, 'html');    
+        }, 'html');
     },
 
     navigate: function (page, index) {
