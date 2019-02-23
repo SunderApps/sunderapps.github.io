@@ -8,7 +8,7 @@ $under.history = $under.history || {
                 history.pushState({ page: url, index: index }, title, url);
                 document.title = title;
                 if (gtag) {
-                    gtag('config', 'GA_TRACKING_ID', { 'page_path': 'url' });
+                    gtag('config', 'GA_TRACKING_ID', { 'page_path': url });
                     console.log('gtagwin');
                 } else {
                     console.log('gtagfail');
