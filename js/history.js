@@ -16,6 +16,9 @@ $under.history = $under.history || {
             page = state.page.substr(1, state.page.length - 2),
             index = page.index;
         }
+        console.log(state);
+        console.log(page);
+        console.log(index);
         $under.$erver.navigate(page, index);
     },
 
