@@ -24,7 +24,7 @@ $under.progress = $under.progress || {
         $under.progress.timer = ms;
         $under.progress.gradient.stop();
         requestAnimationFrame($under.progress.load);
-        setTimeout(callback, ms);
+        delay(callback, ms);
     },
 
     gradient: {
