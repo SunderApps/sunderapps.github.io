@@ -1,9 +1,13 @@
 var $under = $under || {};
 $under.$erver = $under.$erver || {
-    cache: [],
+    cache: {
+        content: [],
+        head: [],
+        script: []
+    },
 
     open: function (index) {
-        $under.$erver.cache[index]
+        $under.$erver.cache.content[index]
             .removeClass('hide')
             .addClass('open');
         if (index == 1) {
@@ -13,16 +17,18 @@ $under.$erver = $under.$erver || {
         }
     },
 
-    loadScript: function (html) {
-
+    loadScript: function (html, index) {
+        $under.$erver.cache.script[index] = $(html);
+        $('head').append($under.$erver.cache.head[index]);
     },
 
-    loadHead: function (html) {
-
+    loadHead: function (html, index) {
+        $under.$erver.cache.head[index] = $(html);
+        $('head').append($under.$erver.cache.head[index]);
     },
 
     loadContent: function (html, index) {
-        $under.$erver.cache[index] = $('<div></div>')
+        $under.$erver.cache.content[index] = $('<div></div>')
             .addClass('container')
             .html(html);
         
@@ -34,25 +40,25 @@ $under.$erver = $under.$erver || {
         var lib = [
             new Promise((res2, rej2) => {
                 $.get('/views/head/' + page + '.html', function (html) {
-                    $under.$erver.loadHead(html);
+                    $under.$erver.loadHead(html, index);
                     res2('head');
                     console.log('head');
                 }, 'html');    
             }), 
             new Promise((res3, rej3) => {
-                $.get('/views/content/' + page + '.html', function (html) {
-                    $under.$erver.loadContent(html, index);
-                    res3('content');
-                    console.log('content');
+                $.get('/views/script/' + page + '.html', function (html) {
+                    $under.$erver.loadScript(html, index);
+                    res3('script');
+                    console.log('script');
                 }, 'html');    
             })
         ];
         var con = new Promise((res1, rej1) => {
-            $.get('/views/script/' + page + '.html', function (html) {
-                $under.$erver.loadScript(html);
-                res1('script');
-                console.log('script');
-            }, 'html');    
+            $.get('/views/content/' + page + '.html', function (html) {
+                $under.$erver.loadContent(html);
+                res1('content');
+                console.log('content');
+            }, 'html');
         }).then((ret1) => Promise.all(lib));
     },
 
@@ -60,7 +66,7 @@ $under.$erver = $under.$erver || {
         $('.container.open').addClass('hide')
         setTimeout(function () { $('.container.open.hide').removeClass('open').removeClass('hide'); }, 300);
         if (index !== -1) {
-            if ($under.$erver.cache[index]) {
+            if ($under.$erver.cache.content[index]) {
                 $under.$erver.open(index);
             } else {
                 $under.$erver.get(page, index);
@@ -68,7 +74,6 @@ $under.$erver = $under.$erver || {
             $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/', index);    
         } else {
             document.title = 'Sunder';
-            // Change META
         }
     },
 
