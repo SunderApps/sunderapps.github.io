@@ -32,21 +32,18 @@ $under.$erver = $under.$erver || {
             .addClass('container')
             .html(html);
         
-        $('body').append($under.$erver.cache[index]);
+        $('body').append($under.$erver.cache.content[index]);
         $under.$erver.open(index);
     },
 
     get: function (page, index) {
         $.get('/views/content/' + page + '.html', function (html) {
             $under.$erver.loadContent(html, index);
-            console.log('content');
             $.get('/views/head/' + page + '.html', function (html) {
                 $under.$erver.loadHead(html, index);
-                console.log('headSuccess');
             }, 'html');    
             $.get('/views/script/' + page + '.html', function (html) {
                 $under.$erver.loadScript(html, index);
-                console.log('scriptSuccess');
             }, 'html');    
         }, 'html');
     },

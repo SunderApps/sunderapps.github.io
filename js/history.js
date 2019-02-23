@@ -1,8 +1,12 @@
 var $under = $under || {};
 $under.history = $under.history || {
+    enabled: false,
+
     push: function (title, url, index) {
-        if (url.toUpperCase() !== window.location.pathname.toUpperCase()) {
-            history.pushState({ page: url, index: index }, title, url);
+        if ($under.history.enabled) {
+            if (url.toUpperCase() !== window.location.pathname.toUpperCase()) {
+                history.pushState({ page: url, index: index }, title, url);
+            }
         }
     },
 
@@ -22,7 +26,10 @@ $under.history = $under.history || {
     },
 
     init: function () {
-        $under.history.events();
+        if (window.history) {
+            $under.history.enabled = true;
+            $under.history.events();
+        }
     }
 };
 
