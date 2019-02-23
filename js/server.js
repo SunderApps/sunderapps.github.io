@@ -8,6 +8,7 @@ $under.$erver = $under.$erver || {
 
     open: function (index) {
         if ($under.$erver.cache.content[index]) {
+            console.log('open');
             $under.progress.wait(1000, ()=>{ $under.$erver.cache.content[index].removeClass('hide').addClass('open'); });
         }
     },
@@ -50,8 +51,6 @@ $under.$erver = $under.$erver || {
                 $under.$erver.get(page, index);
             }
             $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/', index);    
-        } else {
-            document.title = 'Sunder';
         }
     },
 
