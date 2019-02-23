@@ -56,16 +56,27 @@ $under.$erver = $under.$erver || {
     },
 
     nav: function () {
-        var index = $(this).index(),
-            page = $(this).data('page');
+        var $this = $(this),
+            index = $this.parent().index(),
+            page = $this.data('page');
         $under.$erver.navigate(page, index);
     },
 
     events: function () {
-        $('nav ul li').on('click', $under.$erver.nav);
+        
+    },
+
+    replaceLinks: function () {
+        $.each($('nav ul li a'), function (index, elem) {
+            var $this = $(this),
+                page = $this.attr('href').slice(1, -1);
+            $this.attr('href', '').data('page', page);
+        });
+        $('nav ul li a').on('click', $under.$erver.nav);
     },
 
     init: function () {
+        $under.$erver.replaceLinks();
         $under.$erver.events();
     }
 };
