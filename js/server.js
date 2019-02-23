@@ -59,7 +59,9 @@ $under.$erver = $under.$erver || {
                 res1('content');
                 console.log('content');
             }, 'html');
-        }).then((ret1) => Promise.all(lib));
+        }).then((ret1) => Promise.all(lib).then((ret2) => {
+            console.log('all done! :D');
+        }));
     },
 
     navigate: function (page, index) {

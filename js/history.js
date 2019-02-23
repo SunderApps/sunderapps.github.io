@@ -1,7 +1,5 @@
 var $under = $under || {};
 $under.history = $under.history || {
-    state: {},
-
     push: function (title, url, index) {
         if (url.toUpperCase() !== window.location.pathname.toUpperCase()) {
             history.pushState({ page: url, index: index }, title, url);
