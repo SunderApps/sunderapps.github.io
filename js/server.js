@@ -8,7 +8,7 @@ $under.$erver = $under.$erver || {
 
     open: function (index) {
         if ($under.$erver.cache.content[index]) {
-            $under.$erver.cache.content[index].removeClass('hide').addClass('open');
+            $under.progress.wait(200, ()=>{ $under.$erver.cache.content[index].removeClass('hide').addClass('open'); });
         }
     },
 
