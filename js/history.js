@@ -6,6 +6,7 @@ $under.history = $under.history || {
         if ($under.history.enabled) {
             if (url.toUpperCase() !== window.location.pathname.toUpperCase()) {
                 history.pushState({ page: url, index: index }, title, url);
+                document.title = title;
             }
         }
     },

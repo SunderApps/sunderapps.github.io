@@ -7,39 +7,37 @@ $under.$erver = $under.$erver || {
     },
 
     open: function (index) {
-        if ($under.$erver.cache.head[index] && $under.$erver.cache.content[index]) {
-            $('#head').html($under.$erver.cache.head[index]);
+        if ($under.$erver.cache.content[index]) {
             $under.$erver.cache.content[index].removeClass('hide').addClass('open');
         }
     },
 
     loadScript: function (html, index) {
         $under.$erver.cache.script[index] = $(html);
-        $('#scripts').append($under.$erver.cache.head[index]);
+        $('body').append($under.$erver.cache.script[index]);
     },
 
     loadHead: function (html, index) {
         $under.$erver.cache.head[index] = $(html);
+        $('head').append($under.$erver.cache.head[index]);
     },
 
     loadContent: function (html, index) {
-        $under.$erver.cache.content[index] = $('<div></div>')
-            .addClass('container')
-            .html(html);
-        $('body').append($under.$erver.cache.content[index]);
+        $under.$erver.cache.content[index] = $(html)
+        $('pages').append($under.$erver.cache.content[index]);
         $under.$erver.open(index);
     },
 
     get: function (page, index) {
-        $.get('/views/head/' + page + '.html', function (html) {
-            $under.$erver.loadHead(html, index);
-            $.get('/views/content/' + page + '.html', function (html) {
-                $under.$erver.loadContent(html, index);
-                $.get('/views/script/' + page + '.html', function (html) {
-                    $under.$erver.loadScript(html, index);
-                }, 'html');    
-            }, 'html');
-        }, 'html');    
+        $.get('/views/content/' + page + '.html', function (html) {
+            $under.$erver.loadContent(html, index);
+            $.get('/views/head/' + page + '.html', function (html) {
+                $under.$erver.loadHead(html, index);
+            }, 'html');        
+            $.get('/views/script/' + page + '.html', function (html) {
+                $under.$erver.loadScript(html, index);
+            }, 'html');    
+        }, 'html');
     },
 
     navigate: function (page, index) {
