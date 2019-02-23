@@ -24,7 +24,7 @@ $under.$erver = $under.$erver || {
 
     loadContent: function (html, index) {
         $under.$erver.cache.content[index] = $(html)
-        $('pages').append($under.$erver.cache.content[index]);
+        $('#pages').append($under.$erver.cache.content[index]);
         $under.$erver.open(index);
     },
 
