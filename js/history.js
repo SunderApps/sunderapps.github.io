@@ -9,6 +9,9 @@ $under.history = $under.history || {
                 document.title = title;
                 if (gtag) {
                     gtag('config', 'GA_TRACKING_ID', { 'page_path': 'url' });
+                    console.log('gtagwin');
+                } else {
+                    console.log('gtagfail');
                 }
             }
         }
