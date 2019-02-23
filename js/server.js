@@ -41,23 +41,29 @@ $under.$erver = $under.$erver || {
             new Promise((res2, rej2) => {
                 $.get('/views/head/' + page + '.html', function (html) {
                     $under.$erver.loadHead(html, index);
-                    res2('head');
-                    console.log('head');
-                }, 'html');    
+                    console.log('headSuccess');
+                    res2('headSuccess');
+                }, 'html').error(function () {
+                    console.log('headFail');
+                    res2('headFail');
+                });    
             }), 
             new Promise((res3, rej3) => {
                 $.get('/views/script/' + page + '.html', function (html) {
                     $under.$erver.loadScript(html, index);
+                    console.log('scriptSuccess');
                     res3('script');
-                    console.log('script');
-                }, 'html');    
+                }, 'html').error(function () {
+                    console.log('scriptFail');
+                    res3('scriptFail');
+                });    
             })
         ];
         var con = new Promise((res1, rej1) => {
             $.get('/views/content/' + page + '.html', function (html) {
                 $under.$erver.loadContent(html);
-                res1('content');
                 console.log('content');
+                res1('content');
             }, 'html');
         });
     },
