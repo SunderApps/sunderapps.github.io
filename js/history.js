@@ -11,8 +11,8 @@ $under.history = $under.history || {
         if ($under.history.enabled) {
             if (url.toUpperCase() !== window.location.pathname.toUpperCase()) {
                 history.pushState({ page: url, index: index }, title, url);
+                $under.history.update(title, url);
             }
-            $under.history.update(title, url);
         }
     },
 
@@ -25,6 +25,7 @@ $under.history = $under.history || {
             index = state.index;
         }
         $under.$erver.navigate(page, index);
+        $under.history.update('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), (page.toUpperCase() === 'HOME' ? '/' : '/' + page + '/'));
     },
 
     events: function () {

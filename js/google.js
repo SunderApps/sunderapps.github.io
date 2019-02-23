@@ -15,4 +15,4 @@ $under.google = $under.google || {
     }
 };
 
-$under.google.init();
+$($under.google.init);
