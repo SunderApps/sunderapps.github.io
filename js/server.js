@@ -70,7 +70,7 @@ $under.$erver = $under.$erver || {
         $.each($('nav ul li a'), function (index, elem) {
             var $this = $(this),
                 page = $this.attr('href').slice(1, -1);
-            $this.attr('href', '').data('page', page);
+            $this.removeAttr('href').data('page', page);
         });
         $('nav ul li a').on('click', $under.$erver.nav);
     },
