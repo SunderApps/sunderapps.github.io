@@ -14,7 +14,7 @@ $under.history = $under.history || {
             index = -1;
         if (state) {
             page = state.page.substr(1, state.page.length - 2),
-            index = page.index;
+            index = state.index;
         }
         console.log(state);
         console.log(page);
