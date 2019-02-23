@@ -2,18 +2,17 @@ var $under = $under || {};
 $under.history = $under.history || {
     enabled: false,
 
+    update: function (title, url) {
+        document.title = title;
+        $under.google.setPage(url);
+    },
+
     push: function (title, url, index) {
         if ($under.history.enabled) {
             if (url.toUpperCase() !== window.location.pathname.toUpperCase()) {
                 history.pushState({ page: url, index: index }, title, url);
-                document.title = title;
-                if (gtag) {
-                    gtag('config', 'UA-134242899-2', { 'page_path': url });
-                    console.log('gtagwin');
-                } else {
-                    console.log('gtagfail');
-                }
             }
+            $under.history.update(title, url);
         }
     },
 
