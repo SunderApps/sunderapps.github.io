@@ -33,6 +33,7 @@ $under.progress = $under.progress || {
                 var center = Math.floor((event.clientX / $(window).width()) * 100);
                 $('.progress').css({ background: 'linear-gradient(to right, #343A40 0%, #343A40 ' + (center - $under.progress.width) + '%, ' + $under.progress.color + ' ' + center + '%, #343A40 ' + (center + $under.progress.width) + '%, #343A40 100%)' });
             });
+            $(window).mousemove();
         },
         stop: function () {
             $(window).off('mousemove');
