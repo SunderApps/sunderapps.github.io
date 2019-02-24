@@ -31,6 +31,7 @@ nav {
     top: 0;
     left: 0;
     width: 60px;
+    max-width: 500px;
     height: 100vh;
     transition: 300ms;
     background-color: @black;
@@ -38,8 +39,8 @@ nav {
     overflow-x: hidden;
 
     .wrap {
-        width: 500px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 500px;
     }
 
     .head {
@@ -117,7 +118,7 @@ nav {
             a {
                 display: flex;
                 align-items: center;
-                font-size: 0.95em;
+                font-size: 0.75em;
                 font-weight: 500;
                 letter-spacing: 1.46px;
                 text-transform: uppercase;
@@ -195,7 +196,6 @@ nav {
 
     &.show {
         width: 100%;
-        max-width: 500px;
     }
 
     &:hover, &:active, &:focus, &.show {
