@@ -37,6 +37,7 @@ $under.history = $under.history || {
     },
 
     init: function () {
+        console.log('sunder.history.init');
         if (window.history) {
             $under.history.enabled = true;
             $under.history.events();
