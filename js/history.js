@@ -1,6 +1,7 @@
 var $under = $under || {};
 $under.history = $under.history || {
     enabled: false,
+    title: 'Sunder',
 
     update: function (title, url) {
         document.title = title;
@@ -25,7 +26,10 @@ $under.history = $under.history || {
             index = state.index;
         }
         $under.$erver.navigate(page, index);
-        $under.history.update('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), (page.toUpperCase() === 'HOME' ? '/' : '/' + page + '/'));
+        var pageTitle = '',
+            pageTitles = page.split('-');
+        $.each(pageTitles, (index, title) => pageTitle += title.charAt(0).toUpperCase + page.slice(1).toLowerCase());
+        $under.history.update($under.history.title + ' | ' + (page.charAt(0).toUpperCase() + page.slice(1)), (page.toUpperCase() === 'HOME' ? '/' : '/' + page + '/'));
     },
 
     events: function () {

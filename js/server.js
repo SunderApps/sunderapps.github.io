@@ -49,7 +49,10 @@ $under.$erver = $under.$erver || {
             } else {
                 $under.$erver.get(page, index);
             }
-            $under.history.push('Sunder | ' + (page.charAt(0).toUpperCase() + page.slice(1)), '/' + page + '/', index);    
+            var pageTitle = '',
+                pageTitles = page.split('-');
+            $.each(pageTitles, (index, title) => pageTitle += title.charAt(0).toUpperCase + page.slice(1).toLowerCase());
+            $under.history.push($under.history.title + ' | ' + pageTitle, '/' + page + '/', index);    
         }
     },
 
