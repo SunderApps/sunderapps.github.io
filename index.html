@@ -60,40 +60,55 @@
     <nav>
         <div class="wrap">
             <div class="head">
-                    <button class="toggle"><span></span><p>under</p></button>
+                <button class="toggle"><span></span><p>under</p></button>
             </div>
-            <ul>
-                <li>
-                    <a href="/web/">
-                        <i class="fab fa-edge"></i>
-                        Web
-                    </a>
-                </li>
-                <li>
-                    <a href="/audio/">
-                        <i class="fas fa-headphones"></i>
-                        Audio
-                    </a>
-                </li>
-                <li>
-                    <a href="/video/">
-                        <i class="fas fa-video"></i>
-                        Video
-                    </a>
-                </li>
-                <li>
-                    <a href="/graphics/">
-                        <i class="fas fa-images"></i>
-                        Graphics
-                    </a>
-                </li>
-                <li>
-                    <a href="/photos/">
-                        <i class="fas fa-camera"></i>
-                        Photos
-                    </a>
-                </li>
-            </ul>            
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="/web/">
+                            <i class="fab fa-edge"></i>
+                            Web
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/audio/">
+                            <i class="fas fa-headphones"></i>
+                            Audio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/video/">
+                            <i class="fas fa-video"></i>
+                            Video
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/graphics/">
+                            <i class="fas fa-images"></i>
+                            Graphics
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/photos/">
+                            <i class="fas fa-camera"></i>
+                            Photos
+                        </a>
+                    </li>
+                </ul>    
+            </div>
+            <div class="player">
+                <div class="play">
+                    <i class="fas fa-play"></i>
+                    <input type="range" class="scrubber" value="0" />
+                </div>
+                <div class="volume">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" class="volume" min="0" max="1" step="0.1" value="1" />
+                </div>
+                <div class="full-screen">
+                    <i class="fas fa-expand"></i>
+                </div>
+            </div>   
         </div>
     </nav>
     <div class="progress"></div>
@@ -107,5 +122,6 @@
     <script src="/js/history.js" type="text/javascript"></script>
     <script src="/js/server.js" type="text/javascript"></script>
     <script src="/js/progress.js" type="text/javascript"></script>
+    <script src="/js/player.js" type="text/javascript"></script>
 </body>
 </html>
