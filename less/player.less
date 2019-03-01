@@ -2,40 +2,6 @@
 @import 'global.less';
 
 .player {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 5px;
-
-    input {
-        cursor: pointer;
-    }
-
-    i {
-        width: 42px;
-        font-size: 1.3em;
-        text-align: center;
-        color: @white;
-        cursor: pointer;
-
-        &:hover, &:active, &:focus {
-            color: @gray;
-        }
-    }
-
-    div {
-        display: flex;
-        align-items: center;
-        padding: 8px;
-    }
-
-    .play input, .volume input {
-        width: ~"calc(100% - 50px)";
-    }
-
     .title {
         p {
             font-size: 0.9em;
@@ -43,46 +9,86 @@
             color: @white;
         }
     }
-    .play {
-        width: 70%;
-    }
-    .volume {
-        width: 15%;
-    }
-    .menu {
-        position: relative;
-
-        span {
-            top: 15px;
-            left: 10px;
-            
-            &, &::before, &::after {
-                display: block;
-                position: absolute;
-                height: 3px;
-                width: 3px;
-                background-color: @white;
-                content: '';
-                transition: 300ms;
-            }
-
-            &::before {
-                top: -7px;
-                left: 0px;
-            }
-
-            &::after {
-                bottom: -7px;
-                left: 0px;
+    .controls {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 5px;
+    
+        input {
+            cursor: pointer;
+        }
+    
+        i {
+            width: 42px;
+            font-size: 1.3em;
+            text-align: center;
+            color: @white;
+            cursor: pointer;
+    
+            &:hover, &:active, &:focus {
+                color: @gray;
             }
         }
-
-        &:hover, &:active, &:focus, &.open {
+    
+        div {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+        }
+    
+        .play input, .volume input {
+            width: ~"calc(100% - 50px)";
+        }
+    
+        .play {
+            width: 70%;
+        }
+        .volume {
+            width: 15%;
+        }
+        .menu {
+            position: relative;
+            width: 30px;
+            height: 30px;
+    
             span {
-                width: 50px;
-                height: 50px;
-                mix-blend-mode: difference;
-                color: @black;
+                top: 13px;
+                left: 11px;
+                
+                &, &::before, &::after {
+                    display: block;
+                    position: absolute;
+                    height: 3px;
+                    width: 3px;
+                    background-color: @white;
+                    content: '';
+                    transition: 300ms;
+                }
+    
+                &::before {
+                    top: -7px;
+                    left: 0px;
+                }
+    
+                &::after {
+                    bottom: -7px;
+                    left: 0px;
+                }
+            }
+    
+            &:hover, &:active, &:focus, &.open {
+                span {
+                    top: 0;
+                    left: 0;
+                    width: 30px;
+                    height: 30px;
+                    mix-blend-mode: difference;
+                    color: @black;
+                }
             }
         }
     }
