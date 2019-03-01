@@ -2,6 +2,10 @@
 @import 'global.less';
 
 .player {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
     .title {
         p {
             font-size: 0.9em;
@@ -13,9 +17,6 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
         padding: 5px;
     
         input {
@@ -62,8 +63,9 @@
                 &, &::before, &::after {
                     display: block;
                     position: absolute;
-                    height: 3px;
-                    width: 3px;
+                    height: 5px;
+                    width: 5px;
+                    border-radius: 50%;
                     background-color: @white;
                     content: '';
                     transition: 300ms;
@@ -88,6 +90,11 @@
                     height: 30px;
                     mix-blend-mode: difference;
                     color: @black;
+
+                    &::before, &::after {
+                        width: 0;
+                        height: 0;
+                    }
                 }
             }
         }
