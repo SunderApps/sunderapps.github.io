@@ -5,27 +5,31 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    max-width: 500px;
+    min-width: 300px;
 
     .title {
         p {
-            font-size: 0.9em;
+            margin: 0;
+            padding-left: 65px;
+            font-size: 0.7em;
             background-color: @trans;
             color: @white;
         }
     }
     .controls {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        padding: 5px;
+        padding: 5px 5px 5px 0;
     
         input {
             cursor: pointer;
         }
     
         i {
-            width: 42px;
-            font-size: 1.3em;
+            width: 60px;
+            font-size: 0.8em;
             text-align: center;
             color: @white;
             cursor: pointer;
@@ -42,11 +46,12 @@
         }
     
         .play input, .volume input {
-            width: ~"calc(100% - 50px)";
+            width: ~"calc(100% - 60px)";
         }
     
         .play {
             width: 70%;
+            padding-left: 0;
         }
         .volume {
             width: 15%;
