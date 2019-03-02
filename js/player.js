@@ -21,30 +21,24 @@ $under.player = $under.player || {
     },
 
     mute:()=>{
-        console.log('mute');
-        $under.player.element.mute = true;
+        $under.player.element.muted = true;
         $under.player.volume();
     },
 
     unmute:()=>{
-        console.log('unmute');
-        $under.player.element.mute = false;
+        $under.player.element.muted = false;
         $under.player.volume();
     },
 
     toggleMute:()=>{
         if ($('.player .volume i').hasClass('fa-volume-mute')) {
-            console.log('hasclass');
             $under.player.unmute();
         } else {
-            console.log('noclass');
             $under.player.mute();
         }
     },
 
     volume:()=>{
-        console.log('volume');
-        console.log($under.player.element.muted);
         var $icon = $('.player .volume i');
         $under.player.element.volume = $('.player .volume input').val();
         $icon.removeClass('fa-volume-mute').removeClass('fa-volume-off').removeClass('fa-volume-down').removeClass('fa-volume').removeClass('fa-volume-up');
