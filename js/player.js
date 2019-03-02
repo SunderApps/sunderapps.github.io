@@ -71,6 +71,8 @@ $under.player = $under.player || {
     },
 
     toggleMenu:()=>{
+        var dim = $under.getDimensions($('.player .options'));
+        $('.player .options').css({maxHeight: dim.height + 'px'});
         $('.player').toggleClass('menu');
     },
 
