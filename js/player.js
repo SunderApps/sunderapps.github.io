@@ -21,11 +21,13 @@ $under.player = $under.player || {
     },
 
     mute:()=>{
+        console.log('mute');
         $under.player.element.mute = true;
         $under.player.volume();
     },
 
     unmute:()=>{
+        console.log('unmute');
         $under.player.element.mute = false;
         $under.player.volume();
     },
@@ -33,8 +35,10 @@ $under.player = $under.player || {
     toggleMute:()=>{
         if ($('.player .volume i').hasClass('fa-volume-mute')) {
             $under.player.unmute();
+            console.log('hasclass');
         } else {
             $under.player.mute();
+            console.log('noclass');
         }
     },
 
