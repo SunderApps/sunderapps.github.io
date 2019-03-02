@@ -38,6 +38,23 @@
             padding: 10px;
             color: @white;
         }
+
+        .inputs {
+            .select {
+                ul {
+                    &:nth-child(1) {
+                        max-height: 0;
+                    }
+                    &:nth-child(2) {
+                        max-height: 60px;
+                    }
+
+                    &.open {
+                        max-height: 500px;
+                    }
+                }
+            }
+        }
     }
 
     .controls {

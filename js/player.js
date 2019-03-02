@@ -73,6 +73,21 @@ $under.player = $under.player || {
         $('.player').toggleClass('menu');
     },
 
+    toggleOption:()=>{
+        $(this).parent().children('ul').toggleClass('open');
+    },
+
+    selectOption:()=>{
+        var $this = $(this),
+            $list = $this.parent(),
+            $select = $list.parent(),
+            $ul = $select.children('ul'),
+            ulIndex = $select.index($list),
+            liIndex = $ul[ulIndex].index($this);
+        console.log(ulIndex);
+        console.log(liIndex);
+    },
+
     fullScreen:(e)=>{
         if ($under.player.element.requestFullscreen) {
             $under.player.element.requestFullscreen();
@@ -101,6 +116,8 @@ $under.player = $under.player || {
         $('.player .volume input').on('change, input', $under.player.volume);
         $('.player .menu').on('click', $under.player.toggleMenu);
         $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu', ()=>{return false});
+        $('.player .inputs .select ul:nth-child(1)').on('click', $under.player.toggleOption);
+        $('.player .inputs .select ul li').on('click', $under.player.selectOption);
     },
 
     init:()=>{
