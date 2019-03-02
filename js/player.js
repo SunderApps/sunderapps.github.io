@@ -73,7 +73,7 @@ $under.player = $under.player || {
         $('.player').toggleClass('menu');
     },
 
-    toggleOption: function () {
+    toggleOption:()=>{
         console.log('toggle');
         var $this = $(this),
             $select = $this.parent(),
