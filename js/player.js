@@ -95,7 +95,7 @@ $under.player = $under.player || {
     },
 
     init:()=>{
-        $under.player.element = document.createElement('video');
+        $under.player.element = $('.player video')[0];
         $under.player.events();
     }
 };
