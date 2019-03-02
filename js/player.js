@@ -14,9 +14,9 @@ $under.player = $under.player || {
 
     togglePlay:()=>{
         if($('.player .play i').hasClass('fa-pause')) {
-            $under.player.play();
-        } else {
             $under.player.pause();
+        } else {
+            $under.player.play();
         }
     },
 
@@ -26,7 +26,7 @@ $under.player = $under.player || {
     },
 
     unmute:()=>{
-        $under.player.element.mute = true;
+        $under.player.element.mute = false;
         $under.player.volume();
     },
 
