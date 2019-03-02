@@ -74,6 +74,7 @@ $under.player = $under.player || {
     },
 
     openOption: function () {
+        console.log('open');
         var $this = $(this),
             $select = $this.parent(),
             $uls = $select.children('ul'),
@@ -84,6 +85,7 @@ $under.player = $under.player || {
     },
 
     selectOption: function () {
+        console.log('select');
         var $this = $(this),
             $list = $this.parent(),
             $select = $list.parent(),
