@@ -7,6 +7,7 @@
     width: 100%;
     max-width: 500px;
     min-width: 300px;
+    overflow: hidden;
 
     .title {
         p {
@@ -87,37 +88,41 @@
                 }
             }
     
-            &:hover, &:active, &:focus, &.open {
-/*                span {
-                    top: 0;
-                    left: 0;
-                    width: 30px;
-                    height: 30px;
-                    mix-blend-mode: difference;
-                    color: @black;
-
-                    &::before, &::after {
-                        width: 0;
-                        height: 0;
-                    }
-                }*/
-
+            &:hover, &:active, &:focus {
                 & + .overlay {
-                    position: absolute;
-                    right: 15px;
-                    bottom: 15px;
-                    width: 5px;
-                    height: 5px;
-                    border-radius: 50%;
-                    background-color: @white;
+                    transform: scale(200);
                 }
             }
 
             & + .overlay {
-                width: 100vw;
-                height: 100vh;
+                position: absolute;
+                right: 18px;
+                bottom: 20px;
+                width: 5px;
+                height: 5px;
+                padding: 0;
+                border-radius: 50%;
+                background-color: @white;
+                transition: 300ms;
+                transform-origin: 50% 50%;
+
+                &:hover, &:active, &:focus {
+                    transform: scale(200);
+                    
+                }
             }
         }
+
+        .options {
+            position: absolute;
+        }
+    }
+
+    .video {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
     }
 
     @track-color: #424242;
