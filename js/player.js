@@ -74,17 +74,12 @@ $under.player = $under.player || {
     },
 
     toggleOption: function () {
-        console.log('toggle');
         var $this = $(this),
             $select = $this.parent(),
             $uls = $select.children('ul'),
             $lis = $uls.children('li');
         $uls.toggleClass('open');
         $lis.on('click', $under.player.selectOption);
-        console.log($this);
-        console.log($select);
-        console.log($uls);
-        console.log($lis);
     },
 
     selectOption: function () {
@@ -93,7 +88,7 @@ $under.player = $under.player || {
             $select = $list.parent(),
             $uls = $select.children('ul'),
             ulIndex = $uls.index($list),
-            $lis = $uls[ulIndex].children('li'),
+            $lis = $($uls[ulIndex]).children('li'),
             liIndex = $lis.index($this);
         console.log(ulIndex);
         console.log(liIndex);
