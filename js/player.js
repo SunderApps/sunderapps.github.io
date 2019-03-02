@@ -83,8 +83,8 @@ $under.player = $under.player || {
             $list = $this.parent(),
             $select = $list.parent(),
             $ul = $select.children('ul'),
-            ulIndex = $select.index($list),
-            liIndex = $ul[ulIndex].index($this);
+            ulIndex = $ul.index($list),
+            liIndex = $ul[ulIndex].children('li').index($this);
         console.log(ulIndex);
         console.log(liIndex);
     },
