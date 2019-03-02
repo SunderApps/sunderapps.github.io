@@ -34,15 +34,17 @@ $under.player = $under.player || {
 
     toggleMute:()=>{
         if ($('.player .volume i').hasClass('fa-volume-mute')) {
-            $under.player.unmute();
             console.log('hasclass');
+            $under.player.unmute();
         } else {
-            $under.player.mute();
             console.log('noclass');
+            $under.player.mute();
         }
     },
 
     volume:()=>{
+        console.log('volume');
+        console.log($under.player.element.muted);
         var $icon = $('.player .volume i');
         $under.player.element.volume = $('.player .volume input').val();
         $icon.removeClass('fa-volume-mute').removeClass('fa-volume-off').removeClass('fa-volume-down').removeClass('fa-volume').removeClass('fa-volume-up');
