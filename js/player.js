@@ -4,12 +4,12 @@ $under.player = $under.player || {
 
     play:()=>{
         $under.player.element.play();
-        $('.player .play i').addClass('fa-play').removeClass('fa-pause');
+        $('.player .play i').addClass('fa-pause').removeClass('fa-play');
     },
 
     pause:()=>{
         $under.player.element.pause();
-        $('.player .play i').addClass('fa-pause').removeClass('fa-play');
+        $('.player .play i').addClass('fa-play').removeClass('fa-pause');
     },
 
     togglePlay:()=>{
@@ -65,6 +65,11 @@ $under.player = $under.player || {
         $under.player.element.currentTime = $under.player.element.duration * ($('.player .play input').val() / 100);
     },
 
+    update:()=>{
+        var value = (100 / $under.player.element.duration) * $under.player.element.currentTime;
+        $('.player .play input').val(value);
+    },
+
     fullScreen:(e)=>{
         if ($under.player.element.requestFullscreen) {
             $under.player.element.requestFullscreen();
@@ -92,6 +97,7 @@ $under.player = $under.player || {
         $('.player .volume i').on('click', $under.player.toggleMute);
         $('.player .volume input').on('change, input', $under.player.volume);
         $('.player .menu').on('click', $under.player.toggleMenu);
+        $under.player.element.on('timeupdate', $under.player.update).on('contextmenu', ()=>{return false});
     },
 
     init:()=>{
