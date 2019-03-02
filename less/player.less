@@ -61,11 +61,34 @@
             width: 30px;
             height: 30px;
     
-            span {
-                top: 13px;
-                left: 11px;
-                
-                &, &::before, &::after {
+            span { 
+                &:nth-child(1) {
+                    top: 13px;
+                    left: 12px;
+                    
+                    &, &::before, &::after {
+                        display: block;
+                        position: absolute;
+                        height: 5px;
+                        width: 5px;
+                        border-radius: 50%;
+                        background-color: @white;
+                        content: '';
+                        transition: 300ms;
+                    }
+        
+                    &::before {
+                        top: -7px;
+                        left: 0px;
+                    }
+        
+                    &::after {
+                        bottom: -7px;
+                        left: 0px;
+                    }
+                }
+
+                &:nth-child(2) {
                     display: block;
                     position: absolute;
                     height: 5px;
@@ -75,30 +98,27 @@
                     content: '';
                     transition: 300ms;
                 }
-    
-                &::before {
-                    top: -7px;
-                    left: 0px;
-                }
-    
-                &::after {
-                    bottom: -7px;
-                    left: 0px;
-                }
             }
     
             &:hover, &:active, &:focus, &.open {
                 span {
-                    top: 0;
-                    left: 0;
-                    width: 30px;
-                    height: 30px;
-                    mix-blend-mode: difference;
-                    color: @black;
+                    &:nth-child(1) {
+                        top: 0;
+                        left: 0;
+                        width: 30px;
+                        height: 30px;
+                        mix-blend-mode: difference;
+                        color: @black;
 
-                    &::before, &::after {
-                        width: 0;
-                        height: 0;
+                        &::before, &::after {
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        height: 100px;
+                        width: 100px;
                     }
                 }
             }
