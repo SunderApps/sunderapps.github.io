@@ -103,7 +103,7 @@ $under.player = $under.player || {
             }
         }
         $uls.children('li').off('click');
-        $uls.on('click', $under.player.toggleOption);
+        $uls.on('click', $under.player.openOption);
         $uls.removeClass('open');
     },
 
