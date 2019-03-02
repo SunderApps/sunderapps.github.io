@@ -74,9 +74,12 @@ $under.player = $under.player || {
     },
 
     toggleOption:()=>{
+        console.log('toggle');
         var $ul = $(this).parent().children('ul');
         $ul.toggleClass('open');
         $ul.children('a').on('click', $under.player.selectOption);
+        console.log($ul);
+        console.log($ul.children('a'));
     },
 
     selectOption:()=>{
