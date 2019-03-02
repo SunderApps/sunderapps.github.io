@@ -119,7 +119,7 @@ $under.player = $under.player || {
         $('.player .volume input').on('change, input', $under.player.volume);
         $('.player .menu').on('click', $under.player.toggleMenu);
         $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu', ()=>{return false});
-        $('.player .inputs .select ul:nth-child(1)').on('click', $under.player.toggleOption);
+        $('.player .inputs .select ul').on('click', $under.player.toggleOption);
     },
 
     init:()=>{
