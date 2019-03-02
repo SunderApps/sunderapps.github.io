@@ -74,6 +74,7 @@
             position: relative;
             width: 30px;
             height: 30px;
+            cursor: pointer;
     
             span {
                 top: 13px;
@@ -119,12 +120,7 @@
                 background-color: @white;
                 transition: 300ms;
                 transform-origin: 50% 50%;
-
-                &:hover, &:active, &:focus {
-                    transform: scale(200);
-                    mix-blend-mode: difference;
-
-                }
+                pointer-events: none;
             }
         }
     }
@@ -132,6 +128,14 @@
     &.menu {
         .options {
             height: auto;
+        }
+        .controls {
+            .menu {
+                & + .overlay {
+                    transform: scale(200);
+                    mix-blend-mode: difference;
+                }
+            }
         }
     }
 
