@@ -74,8 +74,9 @@ $under.player = $under.player || {
     },
 
     toggleOption:()=>{
-        $(this).toggleClass('open');
-        $(this).siblings('ul').toggleClass('open');
+        var $ul = $(this).parent().children('ul');
+        $ul.toggleClass('open');
+        $ul.children('a').on('click', $under.player.selectOption);
     },
 
     selectOption:()=>{
@@ -84,9 +85,10 @@ $under.player = $under.player || {
             $select = $list.parent(),
             $ul = $select.children('ul'),
             ulIndex = $ul.index($list),
-            liIndex = $ul[ulIndex].children('li').index($this);
+            aIndex = $ul[ulIndex].children('a').index($this);
         console.log(ulIndex);
-        console.log(liIndex);
+        console.log(aIndex);
+        $ul.children().off('click');
     },
 
     fullScreen:(e)=>{
@@ -118,7 +120,6 @@ $under.player = $under.player || {
         $('.player .menu').on('click', $under.player.toggleMenu);
         $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu', ()=>{return false});
         $('.player .inputs .select ul:nth-child(1)').on('click', $under.player.toggleOption);
-        $('.player .inputs .select ul li').on('click', $under.player.selectOption);
     },
 
     init:()=>{
