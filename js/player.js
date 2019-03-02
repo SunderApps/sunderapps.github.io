@@ -2,17 +2,17 @@ var $under = $under || {};
 $under.player = $under.player || {
     element: {},
 
-    play:()=>{
+    play: function () {
         $under.player.element.play();
         $('.player .play i').addClass('fa-pause').removeClass('fa-play');
     },
 
-    pause:()=>{
+    pause: function () {
         $under.player.element.pause();
         $('.player .play i').addClass('fa-play').removeClass('fa-pause');
     },
 
-    togglePlay:()=>{
+    togglePlay: function () {
         if($('.player .play i').hasClass('fa-pause')) {
             $under.player.pause();
         } else {
@@ -20,17 +20,17 @@ $under.player = $under.player || {
         }
     },
 
-    mute:()=>{
+    mute: function () {
         $under.player.element.muted = true;
         $under.player.volume();
     },
 
-    unmute:()=>{
+    unmute: function () {
         $under.player.element.muted = false;
         $under.player.volume();
     },
 
-    toggleMute:()=>{
+    toggleMute: function () {
         if ($('.player .volume i').hasClass('fa-volume-mute')) {
             $under.player.unmute();
         } else {
@@ -38,7 +38,7 @@ $under.player = $under.player || {
         }
     },
 
-    volume:()=>{
+    volume: function () {
         var $icon = $('.player .volume i');
         $under.player.element.volume = $('.player .volume input').val();
         $icon.removeClass('fa-volume-mute').removeClass('fa-volume-off').removeClass('fa-volume-down').removeClass('fa-volume').removeClass('fa-volume-up');
@@ -60,20 +60,20 @@ $under.player = $under.player || {
         }
     },
 
-    setTime:()=>{
+    setTime: function () {
         $under.player.element.currentTime = $under.player.element.duration * ($('.player .play input').val() / 100);
     },
 
-    update:()=>{
+    update: function () {
         var value = (100 / $under.player.element.duration) * $under.player.element.currentTime;
         $('.player .play input').val(value);
     },
 
-    toggleMenu:()=>{
+    toggleMenu: function () {
         $('.player').toggleClass('menu');
     },
 
-    toggleOption:()=>{
+    toggleOption: function () {
         console.log('toggle');
         var $this = $(this),
             $select = $this.parent(),
@@ -87,7 +87,7 @@ $under.player = $under.player || {
         console.log($lis);
     },
 
-    selectOption:()=>{
+    selectOption: function () {
         var $this = $(this),
             $list = $this.parent(),
             $select = $list.parent(),
@@ -118,7 +118,7 @@ $under.player = $under.player || {
         }
     },
 
-    events:()=>{
+    events: function () {
         $('.player .play i').on('click', $under.player.togglePlay);
         $('.player .play input')
             .on('change, input', $under.player.setTime)
@@ -127,11 +127,11 @@ $under.player = $under.player || {
         $('.player .volume i').on('click', $under.player.toggleMute);
         $('.player .volume input').on('change, input', $under.player.volume);
         $('.player .menu').on('click', $under.player.toggleMenu);
-        $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu', ()=>{return false});
+        $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu',  function () {return false});
         $('.player .inputs .select ul').on('click', $under.player.toggleOption);
     },
 
-    init:()=>{
+    init: function () {
         $under.player.element = $('.player video')[0];
         $under.player.events();
     }
