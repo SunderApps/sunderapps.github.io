@@ -39,7 +39,7 @@ $under.player = $under.player || {
     },
 
     volume:()=>{
-        var $icon = $('.player .play i');
+        var $icon = $('.player .volume i');
         $under.player.element.volume = $('.player .volume input').val();
         $icon.removeClass('fa-volume-mute').removeClass('fa-volume-off').removeClass('fa-volume-down').removeClass('fa-volume').removeClass('fa-volume-up');
         if ($under.player.element.muted) {
