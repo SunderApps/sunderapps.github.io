@@ -70,23 +70,8 @@ $under.player = $under.player || {
         $('.player .play input').val(value);
     },
 
-    openMenu:()=>{
-        var dim = $under.getDimensions($('.player .options'));
-        $('.player .options').css({maxHeight: dim.height + 'px'});
-        $('.player').addClass('menu');
-    },
-
-    closeMenu:()=>{
-        $('.player .options').css({maxHeight: '0'});
-        $('.player').removeClass('menu');
-    },
-
     toggleMenu:()=>{
-        if ($('.player').hasClass('menu')) {
-            $under.player.closeMenu();
-        } else {
-            $under.player.openMenu();
-        }
+        $('.player').toggleClass('menu');
     },
 
     fullScreen:(e)=>{

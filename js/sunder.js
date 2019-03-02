@@ -7,15 +7,6 @@ var delay = (function() {
 })();
 
 var $under = $under || {
-
-    getDimensions:($obj)=>{
-        var $wrap = $('<div></div>').addClass('dimensions').css({width:$obj.width() +'px'}).appendTo($('body')),
-            $clone = $obj.clone().attr('style', '').appendTo($wrap),
-            dim = { width: $clone.outerWidth(), height: $clone.outerHeight() };
-        $wrap.remove();
-        return dim;
-    },
-
     sidebar: {
         toggle:()=>{
             $('nav').toggleClass('show')
