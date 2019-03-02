@@ -75,23 +75,29 @@ $under.player = $under.player || {
 
     toggleOption:()=>{
         console.log('toggle');
-        var $ul = $(this).parent().children('ul');
-        $ul.toggleClass('open');
-        $ul.children('a').on('click', $under.player.selectOption);
-        console.log($ul);
-        console.log($ul.children('a'));
+        var $this = $(this),
+            $select = $this.parent(),
+            $uls = $select.children('ul'),
+            $lis = $uls.children('li');
+        $uls.toggleClass('open');
+        $lis.on('click', $under.player.selectOption);
+        console.log($this);
+        console.log($select);
+        console.log($uls);
+        console.log($lis);
     },
 
     selectOption:()=>{
         var $this = $(this),
             $list = $this.parent(),
             $select = $list.parent(),
-            $ul = $select.children('ul'),
-            ulIndex = $ul.index($list),
-            aIndex = $ul[ulIndex].children('a').index($this);
+            $uls = $select.children('ul'),
+            ulIndex = $uls.index($list),
+            $lis = $uls[ulIndex].children('li'),
+            liIndex = $lis.index($this);
         console.log(ulIndex);
-        console.log(aIndex);
-        $ul.children().off('click');
+        console.log(liIndex);
+        $uls.children('li').off('click');
     },
 
     fullScreen:(e)=>{
