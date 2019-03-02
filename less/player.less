@@ -91,6 +91,7 @@
             &:hover, &:active, &:focus {
                 & + .overlay {
                     transform: scale(200);
+                    mix-blend-mode: difference;
                 }
             }
 
@@ -108,7 +109,8 @@
 
                 &:hover, &:active, &:focus {
                     transform: scale(200);
-                    
+                    mix-blend-mode: difference;
+
                 }
             }
         }
@@ -123,6 +125,7 @@
         bottom: 0;
         width: 0;
         height: 0;
+        overflow: hidden;
     }
 
     @track-color: #424242;
@@ -176,8 +179,9 @@
         background-color: transparent;
         height: 20px;
 
-        &:focus {
-            outline: none;
+        &:hover, &:active, &:focus {
+            outline: 0;
+            border: 0;
         }
 
         &::-webkit-slider-runnable-track {
