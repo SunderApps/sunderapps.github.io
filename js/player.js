@@ -74,7 +74,8 @@ $under.player = $under.player || {
     },
 
     toggleOption:()=>{
-        $(this).parent().children('ul').toggleClass('open');
+        $(this).toggleClass('open');
+        $(this).siblings('ul').toggleClass('open');
     },
 
     selectOption:()=>{
