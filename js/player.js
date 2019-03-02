@@ -73,13 +73,14 @@ $under.player = $under.player || {
         $('.player').toggleClass('menu');
     },
 
-    toggleOption: function () {
+    openOption: function () {
         var $this = $(this),
             $select = $this.parent(),
             $uls = $select.children('ul'),
             $lis = $uls.children('li');
-        $uls.toggleClass('open');
-        $lis.on('click', $under.player.selectOption);
+        $uls.off('click');
+        $lis.on('click', $under.player.selectOption);    
+        $uls.addClass('open');
     },
 
     selectOption: function () {
@@ -92,7 +93,18 @@ $under.player = $under.player || {
             liIndex = $lis.index($this);
         console.log(ulIndex);
         console.log(liIndex);
+        if (ulIndex) {
+            for (var i = 0; i < liIndex; i++){
+                $($uls[0]).append($lis[i]);
+            }
+        } else {
+            for (var i = $lis.length; i >= liIndex; i--) {
+                $($uls[1]).prepend($lis[i]);
+            }
+        }
         $uls.children('li').off('click');
+        $uls.on('click', $under.player.toggleOption);
+        $uls.removeClass('open');
     },
 
     fullScreen:(e)=>{
@@ -123,7 +135,7 @@ $under.player = $under.player || {
         $('.player .volume input').on('change, input', $under.player.volume);
         $('.player .menu').on('click', $under.player.toggleMenu);
         $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu',  function () {return false});
-        $('.player .inputs .select ul').on('click', $under.player.toggleOption);
+        $('.player .inputs .select ul').on('click', $under.player.openOption);
     },
 
     init: function () {
