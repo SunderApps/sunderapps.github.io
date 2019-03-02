@@ -42,22 +42,21 @@ $under.player = $under.player || {
         var $icon = $('.player .volume i');
         $under.player.element.volume = $('.player .volume input').val();
         $icon.removeClass('fa-volume-mute').removeClass('fa-volume-off').removeClass('fa-volume-down').removeClass('fa-volume').removeClass('fa-volume-up');
-        if ($under.player.element.muted) {
-            $icon.addClass('fa-volume-mute');
-        } else {
-            switch (true) {
-                case $under.player.element.volume > 0.75:
-                    $icon.addClass('fa-volume-up');
-                    break;
-                case $under.player.element.volume > 0.5:
-                    $icon.addClass('fa-volume');
-                    break;
-                case $under.player.element.volume > 0.25:
-                    $icon.addClass('fa-volume-down');
-                    break;
-                default:
-                    $icon.addClass('fa-volume-off');
-            }    
+        switch (true) {
+            case $under.player.element.muted:
+                $icon.addClass('fa-volume-mute');
+                break;
+            case $under.player.element.volume > 0.75:
+                $icon.addClass('fa-volume-up');
+                break;
+            case $under.player.element.volume > 0.5:
+                $icon.addClass('fa-volume');
+                break;
+            case $under.player.element.volume > 0.25:
+                $icon.addClass('fa-volume-down');
+                break;
+            default:
+                $icon.addClass('fa-volume-off');
         }
     },
 
