@@ -70,6 +70,10 @@ $under.player = $under.player || {
         $('.player .play input').val(value);
     },
 
+    toggleMenu:()=>{
+        $('.player').toggleClass('menu');
+    },
+
     fullScreen:(e)=>{
         if ($under.player.element.requestFullscreen) {
             $under.player.element.requestFullscreen();

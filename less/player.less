@@ -18,6 +18,19 @@
             color: @white;
         }
     }
+
+    .video {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .options {
+        height: 0;
+    }
+
     .controls {
         display: flex;
         justify-content: space-between;
@@ -55,7 +68,7 @@
             padding-left: 0;
         }
         .volume {
-            width: 15%;
+            width: 27%;
         }
         .menu {
             position: relative;
@@ -114,18 +127,12 @@
                 }
             }
         }
-
-        .options {
-            position: absolute;
-        }
     }
 
-    .video {
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        overflow: hidden;
+    &.menu {
+        .options {
+            height: auto;
+        }
     }
 
     @track-color: #424242;
