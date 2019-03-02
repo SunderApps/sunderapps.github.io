@@ -4,12 +4,12 @@ $under.player = $under.player || {
 
     play:()=>{
         $under.player.element.play();
-        $('.player .fa-pause').addClass('fa-play').removeClass('fa-pause');
+        $('.player .play i').addClass('fa-play').removeClass('fa-pause');
     },
 
     pause:()=>{
         $under.player.element.pause();
-        $('.player .fa-play').addClass('fa-pause').removeClass('fa-play');
+        $('.player .play i').addClass('fa-pause').removeClass('fa-play');
     },
 
     togglePlay:()=>{
@@ -21,15 +21,58 @@ $under.player = $under.player || {
     },
 
     mute:()=>{
-
+        $under.player.element.mute = true;
+        $under.player.volume();
     },
 
     unmute:()=>{
-
+        $under.player.element.mute = true;
+        $under.player.volume();
     },
 
     toggleMute:()=>{
+        if ($('.player .volume i').hasClass('fa-volume-mute')) {
+            $under.player.unmute();
+        } else {
+            $under.player.mute();
+        }
+    },
 
+    volume:()=>{
+        var $icon = $('.player .play i');
+        $under.player.element.volume = $('.player .volume input').val();
+        $icon.removeClass('fa-volume-mute').removeClass('fa-volume-off').removeClass('fa-volume-down').removeClass('fa-volume').removeClass('fa-volume-up');
+        if ($under.player.element.muted) {
+            $icon.addClass('fa-volume-mute');
+        } else {
+            switch (true) {
+                case $under.player.element.volume > 0.75:
+                    $icon.addClass('fa-volume-up');
+                    break;
+                case $under.player.element.volume > 0.5:
+                    $icon.addClass('fa-volume');
+                    break;
+                case $under.player.element.volume > 0.25:
+                    $icon.addClass('fa-volume-down');
+                    break;
+                default:
+                    $icon.addClass('fa-volume-off');
+            }    
+        }
+    },
+
+    setTime:()=>{
+        $under.player.element.currentTime = $under.player.element.duration * ($('.player .play input').val() / 100);
+    },
+
+    fullScreen:(e)=>{
+        if ($under.player.element.requestFullscreen) {
+            $under.player.element.requestFullscreen();
+        } else if ($under.player.element.mozRequestFullScreen) {
+            $under.player.element.mozRequestFullScreen();
+        } else if ($under.player.element.webkitRequestFullscreen) {
+            $under.player.element.webkitRequestFullscreen();
+        }
     },
 
     load:(src,title)=>{
@@ -48,7 +91,7 @@ $under.player = $under.player || {
             .on('mouseup', $under.player.play);
         $('.player .volume i').on('click', $under.player.toggleMute);
         $('.player .volume input').on('change, input', $under.player.volume);
-        $('.player .full-screen i').on('click', $under.player.fullScreen);
+        $('.player .menu').on('click', $under.player.toggleMenu);
     },
 
     init:()=>{
