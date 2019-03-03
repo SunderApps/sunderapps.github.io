@@ -74,7 +74,6 @@ $under.player = $under.player || {
     },
 
     openOption: function (e) {
-        console.log('open');
         var $this = $(this),
             $select = $this.parent(),
             $uls = $select.children('ul'),
@@ -86,7 +85,6 @@ $under.player = $under.player || {
     },
 
     selectOption: function (e) {
-        console.log('select');
         var $this = $(this),
             $list = $this.parent(),
             $select = $list.parent(),
@@ -94,8 +92,6 @@ $under.player = $under.player || {
             ulIndex = $uls.index($list),
             $lis = $($uls[ulIndex]).children('li'),
             liIndex = $lis.index($this);
-        console.log(ulIndex);
-        console.log(liIndex);
         if (ulIndex) {
             for (var i = 0; i < liIndex; i++){
                 $($uls[0]).append($lis[i]);
