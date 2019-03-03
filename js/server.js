@@ -6,9 +6,17 @@ $under.$erver = $under.$erver || {
         script: []
     },
 
+    on: function (event, handler) {
+        $($under.$erver).on(event, handler);
+    },
+
+    off: function (event, handler) {
+        $($under.$erver).off(event, handler);
+    },
+
     open: function (index) {
         if ($under.$erver.cache.content[index]) {
-            $under.progress.wait(300, ()=>{ console.log('callback'); $under.$erver.cache.content[index].removeClass('hide').addClass('open'); });
+            $under.progress.wait(300, ()=>{$under.$erver.cache.content[index].removeClass('hide').addClass('open'); $($under.$erver).trigger('$-open-page'); });
         }
     },
 
