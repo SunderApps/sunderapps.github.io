@@ -73,7 +73,7 @@ $under.player = $under.player || {
         $('.player').toggleClass('menu');
     },
 
-    openOption: function () {
+    openOption: function (e) {
         console.log('open');
         var $this = $(this),
             $select = $this.parent(),
@@ -82,9 +82,10 @@ $under.player = $under.player || {
         $uls.off('click');
         $lis.on('click', $under.player.selectOption);    
         $uls.addClass('open');
+        e.stopPropagation();
     },
 
-    selectOption: function () {
+    selectOption: function (e) {
         console.log('select');
         var $this = $(this),
             $list = $this.parent(),
@@ -107,6 +108,7 @@ $under.player = $under.player || {
         $uls.children('li').off('click');
         $uls.on('click', $under.player.openOption);
         $uls.removeClass('open');
+        e.stopPropagation();
     },
 
     fullScreen:(e)=>{
