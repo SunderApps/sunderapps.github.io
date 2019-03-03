@@ -39,7 +39,7 @@ $under.player = $under.player || {
     },
 
     volume: function () {
-        var $icon = $('.player .volume i');
+        var $icon = $('.player .volume i, .player .options .icons .vol');
         $under.player.element.volume = $('.player .volume input').val();
         $icon.removeClass('fa-volume-mute').removeClass('fa-volume-off').removeClass('fa-volume-down').removeClass('fa-volume').removeClass('fa-volume-up');
         switch (true) {
@@ -107,7 +107,7 @@ $under.player = $under.player || {
         e.stopPropagation();
     },
 
-    fullScreen:(e)=>{
+    fullScreen: function (e) {
         if ($under.player.element.requestFullscreen) {
             $under.player.element.requestFullscreen();
         } else if ($under.player.element.mozRequestFullScreen) {
@@ -117,7 +117,7 @@ $under.player = $under.player || {
         }
     },
 
-    load:(src,title)=>{
+    load: function (src,title) {
         if (src) {
             $under.player.element.src = src;
             $under.player.element.load();
@@ -131,11 +131,12 @@ $under.player = $under.player || {
             .on('change, input', $under.player.setTime)
             .on('mousedown', $under.player.pause)
             .on('mouseup', $under.player.play);
-        $('.player .volume i').on('click', $under.player.toggleMute);
+        $('.player .volume i, .player .options .icons .vol').on('click', $under.player.toggleMute);
         $('.player .volume input').on('change, input', $under.player.volume);
         $('.player .menu').on('click', $under.player.toggleMenu);
         $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu',  function () {return false});
         $('.player .inputs .select ul').on('click', $under.player.openOption);
+        $('.player .options .fa-expand').on('click', $under.player.fullScreen);
     },
 
     init: function () {

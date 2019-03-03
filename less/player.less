@@ -37,6 +37,20 @@
             justify-content: space-around;
             padding: 10px;
             color: @white;
+
+            i {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 30px;
+                cursor: pointer;
+                transition: 300ms;
+
+                &:hover, &:active, &:focus {
+                    filter: brightness(0.8);
+                }
+            }
         }
 
         .inputs {
