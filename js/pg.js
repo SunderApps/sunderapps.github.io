@@ -12,59 +12,7 @@ $under.pg = $under.pg || {
             start: '2006/1/1',
             end: e + '/' + t + '/' + a,
             amount: '100',
-            format: true
-        }).done(function (json) {
-            console.log(json);
-        });
-        $.getJSON('https://www.statbureau.org/calculate-inflation-price-json',
-        {
-            country: 'united-states',
-            start: '2006/1/1',
-            end: e + '/' + t + '/' + a,
-            amount: '100',
-            format: true
-        }).done(function (json) {
-            console.log(json);
-        });
-        $.getJSON('https://www.statbureau.org/calculate-inflation-value-json',
-        {
-            country: 'united-states',
-            start: '2006/1/1',
-            end: e + '/' + t + '/' + a,
-            amount: '100',
-            format: true
-        }).done(function (json) {
-            console.log(json);
-        });
-
-
-        $.getJSON('https://www.statbureau.org/calculate-inflation-rate-json',
-        {
-            country: 'united-states',
-            start: e + '/' + t + '/' + a,
-            end: '2006/1/1',
-            amount: '100',
-            format: true
-        }).done(function (json) {
-            console.log(json);
-        });
-        $.getJSON('https://www.statbureau.org/calculate-inflation-price-json',
-        {
-            country: 'united-states',
-            start: e + '/' + t + '/' + a,
-            end: '2006/1/1',
-            amount: '100',
-            format: true
-        }).done(function (json) {
-            console.log(json);
-        });
-        $.getJSON('https://www.statbureau.org/calculate-inflation-value-json',
-        {
-            country: 'united-states',
-            start: e + '/' + t + '/' + a,
-            end: '2006/1/1',
-            amount: '100',
-            format: true
+            format: false
         }).done(function (json) {
             console.log(json);
         });
