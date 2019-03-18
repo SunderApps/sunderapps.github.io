@@ -1,1 +1,1 @@
-.video-grid{display:grid;grid-gap:20px;grid-template-columns:repeat(auto-fit, minmax(0, 600px));grid-auto-rows:340px;grid-auto-flow:row dense;justify-content:center}.video-grid iframe{width:100%;max-width:600px;height:340px}
+.video-grid{display:grid;grid-gap:20px;grid-template-columns:repeat(auto-fit, minmax(0, 600px));grid-auto-rows:340px;grid-auto-flow:row dense;justify-content:center;padding:20px}.video-grid iframe{width:100%;max-width:600px;height:340px}
