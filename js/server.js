@@ -77,7 +77,7 @@ $under.$erver = $under.$erver || {
 
     load: function () {
         var page = $under.$erver.getLocation().slice(1, -1),
-            $this = $('nav .links ul li a[href="/' + page + '/"], nav .links ul li a[data-page=' + page + ']').first(),
+            $this = $('nav .links ul li a[href="/' + page + '/"], nav .links ul li a[data-page=' + page + ']'),
             index = $this.parent().index();
 
         console.log(page);
