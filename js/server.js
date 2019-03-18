@@ -76,8 +76,13 @@ $under.$erver = $under.$erver || {
     },
 
     load: function () {
-        var page = $under.$erver.getLocation();
+        var page = $under.$erver.getLocation().slice(1, -1),
+            $this = $('nav .links ul li a[href="/' + page + '/"], nav .links ul li a[data-page="' + page + '"]').first(),
+            index = $this.parent().index();
         console.log(page);
+        console.log(index);
+        $under.$erver.navigate(page, index);
+        
     },
 
     events: function () {
