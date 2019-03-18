@@ -52,10 +52,11 @@
     <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Palanquin|Racing+Sans+One" rel="stylesheet" type="text/css">
-    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" type="text/css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="/css/sunder.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/web.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Palanquin|Racing+Sans+One" type="text/css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" type="text/css" rel="stylesheet" />
+    <link href="/css/sunder.min.css" type="text/css" rel="stylesheet" />
+    <link href="/css/sidebar.min.css" type="text/css" rel="stylesheet" />
+    <link href="/css/player.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <nav>
@@ -63,410 +64,106 @@
             <div class="head">
                 <button class="toggle"><span></span><p>under</p></button>
             </div>
-            <ul>
-                <li data-page="web">
-                    <a href="/web/">
-                        <i class="fab fa-edge"></i>
-                        Web
-                    </a>
-                </li>
-                <li data-page="audio">
-                    <a href="/audio/">
-                        <i class="fas fa-headphones"></i>
-                        Audio
-                    </a>
-                </li>
-                <li data-page="video">
-                    <a href="/video/">
-                        <i class="fas fa-video"></i>
-                        Video
-                    </a>
-                </li>
-                <li data-page="graphics">
-                    <a href="/graphics/">
-                        <i class="fas fa-images"></i>
-                        Graphics
-                    </a>
-                </li>
-                <li data-page="photos">
-                    <a href="/photos/">
-                        <i class="fas fa-camera"></i>
-                        Photos
-                    </a>
-                </li>
-            </ul>            
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="/web/">
+                            <i class="fab fa-edge"></i>
+                            Web
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/audio/">
+                            <i class="fas fa-headphones"></i>
+                            Audio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/video/">
+                            <i class="fas fa-video"></i>
+                            Video
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/graphics/">
+                            <i class="fas fa-images"></i>
+                            Graphics
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/photos/">
+                            <i class="fas fa-camera"></i>
+                            Photos
+                        </a>
+                    </li>
+                </ul>    
+            </div>
+            <div class="player">
+                <div class="video">
+                    <video src="https://www.dacierno.com/mp3/cato/audio-medic.mp3"></video>
+                </div>
+                <div class="title">
+                    <p>D'Acierno - Audio Medic</p>
+                </div>
+                <div class="controls">
+                    <div class="play">
+                        <i class="fas fa-play"></i>
+                        <input type="range" value="0" />
+                    </div>
+                    <div class="volume">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" min="0" max="1" step="0.1" value="1" />
+                    </div>
+                    <div class="menu">
+                        <span></span>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="options">
+                    <div class="icons">
+                        <i class="fas fa-expand"></i>
+                        <i class="fas fa-volume-mute vol"></i>
+                    </div>
+                    <div class="inputs">
+                        <div class="select quality">
+                            <ul></ul>
+                            <ul>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-mobile"></i>
+                                        Low
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-tablet"></i>
+                                        Med
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-desktop"></i>
+                                        High        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>   
         </div>
     </nav>
     <div class="progress"></div>
     <div class="logo">
         <button><span></span></button>
     </div>
-    <section id="pages">
-        <div class="container open">
-            <div class="web-grid">
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Sunder</h3>
-                            <h4>Freelance</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/rN90K1T.png" />
-                    <iframe data-src="https://www.sunderapps.com"></iframe>
-                    <div>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>FONT-AWESOME 5.7.2</span>
-                        <span>JS</span>
-                        <span>JQUERY 3.3.1</span>
-                        <span>PHOTOSWIPE 4.1.2</span>
-                        <p>My website!</p>
-                    </div>
-                    <hr />
-                    <h6>February 2019</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Brahctopus</h3>
-                            <h4>Freelance</h4>
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/ZW4pl1e.jpg" />
-                    <iframe data-src="https://www.brahctopus.com"></iframe>
-                    <div>
-                        <span>C#</span>
-                        <span>ASP.NET Core 2.0</span>
-                        <span>SQUARE CONNECT API</span>
-                        <span>CODEMONKEY API</span>
-                        <span>WEBGL</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 4.2.1</span>
-                        <span>FONT-AWESOME 5.4.1</span>
-                        <span>JS</span>
-                        <span>JQUERY 3.3.1</span>
-                        <span>PHOTOSWIPE 4.1.2</span>
-                        <p>Official website of local Pittsburgh band, Brahctopus.  Includes an audio visualizer and a video game.</p>
-                    </div>
-                    <hr />
-                    <h6>January 2019</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Unbroken</h3>
-                            <h4>Pittsburgh Post-Gazette</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/WThmZ12.png" />
-                    <iframe data-src="https://newsinteractive.post-gazette.com/pittsburgh-squirrel-hill-synagogue-massacre/"></iframe>
-                    <div>
-                        <span>PHP 5.7</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>FONT-AWESOME</span>
-                        <span>JS</span>
-                        <span>JQUERY</span>
-                        <p>The Tree of Life mass shooting wrought death and anguish, but also fierce resolve.</p>
-                    </div>
-                    <hr />
-                    <h6>November 2018</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Dr. D'Acierno</h3>
-                            <h4>Freelance</h4>
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/SP1vSKe.png" />
-                    <iframe data-src="https://dr.dacierno.com"></iframe>
-                    <div>
-                        <span>C#</span>
-                        <span>ASP.NET Core 2.0</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 4.0.0</span>
-                        <span>FONT-AWESOME 4.7.0</span>
-                        <span>JS</span>
-                        <span>JQUERY 3.2.1</span>
-                        <p>Homepage of Dr. Dayna D'Acierno, Dr. of Chiropractic.</p>
-                    </div>
-                    <hr />
-                    <h6>July 2018</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Hype Manager</h3>
-                            <h4>Pittsburgh Post-Gazette</h4>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/3AfYw6Q.png" />
-                    <div>
-                        <span>PHP 5.7</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>FONT-AWESOME</span>
-                        <span>JS</span>
-                        <span>JQUERY</span>
-                        <p>Organizes and prepares Tumult Hype files for embedding in Post-Gazette NewsSlide.</p>
-                    </div>
-                    <hr />
-                    <h6>June 2018</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>In The Lead 2018</h3>
-                            <h4>Pittsburgh Post-Gazette</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/XMjbpy1.jpg" />
-                    <iframe data-src="https://newsinteractive.post-gazette.com/in-the-lead/"></iframe>
-                    <div>
-                        <span>PHP 5.7</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP</span>
-                        <span>FONT-AWESOME</span>
-                        <span>JS</span>
-                        <span>JQUERY</span>
-                        <p>Landing page for the Post-Gazette's annual special edition, In The Lead (2018 Edition).</p>
-                    </div>
-                    <hr />
-                    <h6>May 2018</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Amazon HQ2 Landing Page</h3>
-                            <h4>Pittsburgh Post-Gazette</h4>
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/RBy03DT.jpg" />
-                    <iframe data-src="https://newsinteractive.post-gazette.com/hq2/"></iframe>
-                    <div>
-                        <span>PHP 5.7</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 4.0.0</span>
-                        <span>FONT-AWESOME 4.0.7</span>
-                        <span>JS</span>
-                        <span>JQUERY 3.2.1</span>
-                        <p>The landing page for all of the Post-Gazette's articles about Amazon HQ2 and Pittsburgh.</p>
-                    </div>
-                    <hr />
-                    <h6>March 2018</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Three Rivers, Two Mysteries</h3>
-                            <h4>Pittsburgh Post-Gazette</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/EkMMWLz.png" />
-                    <iframe data-src="https://newsinteractive.post-gazette.com/threeriverstwomysteries/"></iframe>
-                    <div>
-                        <span>PHP 5.7</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP</span>
-                        <span>FONT-AWESOME</span>
-                        <span>JS</span>
-                        <span>JQUERY</span>
-                        <p>Homepage of the Post-Gazette's 8-part podcast detailing the mystery behind the disappearance of Paul Kochu and Dakota James.</p>
-                    </div>
-                    <hr />
-                    <h6>October 2017</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Dr. D'Acierno</h3>
-                            <h4>Freelance</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/fbL3d8e.png" />
-                    <iframe data-src="https://www.dacierno.com"></iframe>
-                    <div>
-                        <span>C#</span>
-                        <span>ASP.NET 4.5.2</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 3.0.0</span>
-                        <span>FONT-AWESOME 4.7.0</span>
-                        <span>JS</span>
-                        <span>JQUERY 1.10.2</span>
-                        <p>Listen to D'Acierno's latest EP, "Cato Singles," studio recordings, beats, and videos!</p>
-                    </div>
-                    <hr />
-                    <h6>October 2017</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>T&amp;N Marketing</h3>
-                            <h4>Freelance</h4>        
-                        </div>
-                        <div>            
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/LgCMvsM.jpg" />
-                    <iframe data-src="http://www.tandnmarketing.com"></iframe>
-                    <div>
-                        <span>C#</span>
-                        <span>ASP.NET 4.5.2</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 3.0.0</span>
-                        <span>FONT-AWESOME 4.7.0</span>
-                        <span>JS</span>
-                        <span>JQUERY 1.10.2</span>
-                        <p>Unleash the power of social media marketing!</p>
-                    </div>
-                    <hr />
-                    <h6>February 2017</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>MapMaker</h3>
-                            <h4>Pittsburgh Post-Gazette</h4>        
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/1VWVrmg.png" />
-                    <div>
-                        <span>PHP 5.7</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 3.3.7</span>
-                        <span>FONT-AWESOME 4.7.0</span>
-                        <span>JS</span>
-                        <span>JQUERY 3.2.4</span>
-                        <span>PAPA PARSE 4.1.2</span>
-                        <span>FILE SAVER 1.1.3</span>
-                        <span>LEAFLET 1.0.3</span>
-                        <span>OPEN STREET MAPS</span>
-                        <p>Create leaflet.js maps for embedding in Post-Gazette articles.</p>
-                    </div>
-                    <hr />
-                    <h6>October 2017</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Dr. D'Acierno</h3>
-                            <h4>Freelance</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/mYu1qbj.png" />
-                    <iframe data-src="http://www.ztentertainment.com"></iframe>
-                    <div>
-                        <span>C#</span>
-                        <span>ASP.NET 4.5.2</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 3.0.0</span>
-                        <span>FONT-AWESOME 4.7.0</span>
-                        <span>JS</span>
-                        <span>JQUERY 1.10.2</span>
-                        <p>DJ and Photography/Videography Services for a reasonable price.</p>
-                    </div>
-                    <hr />
-                    <h6>January 2017</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>PharmGenius</h3>
-                            <h4>Freelance</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/ne8a3JP.png" />
-                    <iframe data-src="http://aecs1980qg.appspot.com/"></iframe>
-                    <div>
-                        <span>PYTHON 2.7</span>
-                        <span>DJANGO</span>
-                        <span>GOOGLE CLOUD SDK</span>
-                        <span>GOOGLE APP ENGINE</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>BOOTSTRAP 3.3.6</span>
-                        <span>FONT-AWESOME 4.2.0</span>
-                        <span>JS</span>
-                        <span>JQUERY 2.1.3</span>
-                        <p>An easy, fun way to help pharmacy students learn and study.</p>
-                    </div>
-                    <hr />
-                    <h6>February 2016</h6>
-                </div>
-                <div class="web">
-                    <div class="head">
-                        <div>
-                            <h3>Q-Solutions Challenge</h3>
-                            <h4>Freelance</h4>        
-                        </div>
-                        <div>
-                            <input type="radio" name="iframe" value="iframe"/><span></span>
-                        </div>
-                    </div>
-                    <img src="https://i.imgur.com/dsNkgNU.png" />
-                    <iframe data-src="http://www.q-solutionsgroup.com"></iframe>
-                    <div>
-                        <span>VB</span>
-                        <span>ASP.NET 4.0</span>
-                        <span>WINDOWS FORMS</span>
-                        <span>SQL SERVER</span>
-                        <span>HTML 5</span>
-                        <span>CSS 3</span>
-                        <span>TELERIK</span>
-                        <span>JS</span>
-                        <p>See how much your call center could save by taking the Q-Solutions Challenge!  This Web page takes information about your call center, then calculates how much money you could save by using the Q-Solution.</p>
-                    </div>
-                    <hr />
-                    <h6>February 2016</h6>
-                </div>
-            </div>
-        </div>
-    </section>   
+    <section id="pages"></section>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
     <script src="/js/sunder.js" type="text/javascript"></script>
+    <script src="/js/google.js" type="text/javascript"></script>
     <script src="/js/history.js" type="text/javascript"></script>
     <script src="/js/server.js" type="text/javascript"></script>
-    <script src="/js/web.js" type="text/javascript"></script>
+    <script src="/js/progress.js" type="text/javascript"></script>
+    <script src="/js/player.js" type="text/javascript"></script>
 </body>
 </html>
