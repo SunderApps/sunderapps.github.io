@@ -79,15 +79,11 @@ $under.$erver = $under.$erver || {
         var page = $under.$erver.getLocation().slice(1, -1),
             $this = $('nav .links ul li a[href="/' + page + '/"], nav .links ul li a[data-page=' + page + ']'),
             index = $this.parent().index();
-
-        console.log(page);
-        console.log($this);
-        console.log(index);
         $under.$erver.navigate(page, index);
     },
 
     events: function () {
-        
+        $under.$erver.on('$-open-page', $under.sidebar.close);
     },
 
     replaceLinks: function () {

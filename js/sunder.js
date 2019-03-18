@@ -8,16 +8,19 @@ var delay = (function() {
 
 var $under = $under || {
     sidebar: {
-        toggle:()=>{
+        toggle: function () {
             $('nav').toggleClass('show')
+        },
+        close: function () {
+            $('nav').removeClass('show');
         }
     },
 
-    events:()=>{
+    events: function () {
         $('nav .toggle').on('click', $under.sidebar.toggle);
     },
 
-    init:()=>{
+    init: function () {
         $under.events();
     }
 };
