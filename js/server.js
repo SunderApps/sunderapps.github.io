@@ -71,6 +71,15 @@ $under.$erver = $under.$erver || {
         $under.$erver.navigate(page, index);
     },
 
+    getLocation: function () {
+        return window.location.pathname;
+    },
+
+    load: function () {
+        var page = $under.$erver.getLocation();
+        console.log(page);
+    },
+
     events: function () {
         
     },
@@ -87,6 +96,7 @@ $under.$erver = $under.$erver || {
     init: function () {
         $under.$erver.replaceLinks();
         $under.$erver.events();
+        $under.$erver.load();
     }
 };
 
