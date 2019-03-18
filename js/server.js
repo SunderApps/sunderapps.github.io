@@ -49,6 +49,7 @@ $under.$erver = $under.$erver || {
     },
 
     navigate: function (page, index) {
+        $($under.$erver).trigger('$-page-start');
         $('.container.open').addClass('hide')
         setTimeout(function () { $('.container.open.hide').removeClass('open').removeClass('hide'); }, 300);
         if (index !== -1) {
@@ -83,7 +84,7 @@ $under.$erver = $under.$erver || {
     },
 
     events: function () {
-        $under.$erver.on('$-open-page', $under.sidebar.close);
+        $under.$erver.on('$-page-start', $under.sidebar.close);
     },
 
     replaceLinks: function () {
