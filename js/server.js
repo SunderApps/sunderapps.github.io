@@ -88,12 +88,11 @@ $under.$erver = $under.$erver || {
     },
 
     replaceLinks: function () {
-        $.each($('nav .links ul li a'), function (index, elem) {
+        $.each($('nav .links ul li a[href]'), function (index, elem) {
             var $this = $(this),
                 page = $this.attr('href').slice(1, -1);
-            $this.removeAttr('href').data('page', page);
+            $this.removeAttr('href').data('page', page).on('click', $under.$erver.nav);
         });
-        $('nav .links ul li a').on('click', $under.$erver.nav);
     },
 
     init: function () {
