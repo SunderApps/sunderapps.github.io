@@ -5,7 +5,11 @@ $under.history = $under.history || {
 
     update: function (title, url) {
         document.title = title;
-        $under.google.setPage(url);
+        try {
+            $under.google.setPage(url);
+        } catch (e) {
+            
+        }
     },
 
     push: function (title, url, index) {
