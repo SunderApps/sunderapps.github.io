@@ -88,7 +88,7 @@ $under.$erver = $under.$erver || {
     },
 
     replaceLinks: function () {
-        $.each($('nav .links ul li a[href]'), function (index, elem) {
+        $.each($('nav .links ul li a[href]:not([href^="https"])'), function (index, elem) {
             var $this = $(this),
                 page = $this.attr('href').slice(1, -1);
             $this.removeAttr('href').data('page', page).on('click', $under.$erver.nav);
