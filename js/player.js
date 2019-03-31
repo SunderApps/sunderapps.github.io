@@ -134,7 +134,7 @@ $under.player = $under.player || {
         $('.player .volume i, .player .options .icons .vol').on('click', $under.player.toggleMute);
         $('.player .volume input').on('change, input', $under.player.volume);
         $('.player .menu').on('click', $under.player.toggleMenu);
-        $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu',  function () {return false});
+        $($under.player.element).on('timeupdate', $under.player.update).on('contextmenu',  ()=>{return false});
         $('.player .inputs .select ul').on('click', $under.player.openOption);
         $('.player .options .fa-expand').on('click', $under.player.fullScreen);
     },
