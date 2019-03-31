@@ -39,12 +39,16 @@ $under.$erver = $under.$erver || {
     get: function (page, index) {
         $.get('/views/content/' + page + '.html', function (html) {
             $under.$erver.loadContent(html, index);
-            $.get('/views/head/' + page + '.html', function (html) {
-                $under.$erver.loadHead(html, index);
-            }, 'html');        
-            $.get('/views/script/' + page + '.html', function (html) {
-                $under.$erver.loadScript(html, index);
-            }, 'html');    
+            try {
+                $.get('/views/head/' + page + '.html', function (html) {
+                    $under.$erver.loadHead(html, index);
+                }, 'html');        
+                $.get('/views/script/' + page + '.html', function (html) {
+                    $under.$erver.loadScript(html, index);
+                }, 'html');    
+            } catch (e) {
+
+            }
         }, 'html');
     },
 
@@ -77,10 +81,12 @@ $under.$erver = $under.$erver || {
     },
 
     load: function () {
-        var page = $under.$erver.getLocation().slice(1, -1),
-            $this = $('nav .links ul li a[href="/' + page + '/"], nav .links ul li a[data-page=' + page + ']'),
+        var page = $under.$erver.getLocation().slice(1, -1);
+        if (page) {
+            var $this = $('nav .links ul li a[href="/' + page + (page === '' ? '' : '/') + '"], nav .links ul li a[data-page=' + page + ']'),
             index = $this.parent().index();
-        $under.$erver.navigate(page, index);
+            $under.$erver.navigate(page, index);
+        }
     },
 
     events: function () {
