@@ -82,7 +82,6 @@ $under.$erver = $under.$erver || {
 
     load: function () {
         var page = $under.$erver.getLocation().slice(1, -1);
-        console.log(page);
         if (page) {
             var $this = $('nav .links ul li a[href="/' + page + (page === '' ? '' : '/') + '"], nav .links ul li a[data-page=' + page + ']'),
             index = $this.parent().index();

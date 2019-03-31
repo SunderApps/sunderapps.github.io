@@ -121,9 +121,9 @@ $under.player = $under.player || {
         console.log('_____________');
         console.log(src);
         console.log($under.player.element.src);
-        console.log($under.player.element.src.replace(/.*?mp3/, ''));
+        console.log($under.player.element.src.replace(/.*?[.]com/, ''));
         console.log('_____________');
-        if (src && $under.player.element.src.replace(/.*?mp3/, '') !== src) {
+        if (src && $under.player.element.src.replace(/.*?[.]com/, '') !== src) {
             $under.player.element.src = src;
             $under.player.element.load();
             $('.player .title p').text(title);
