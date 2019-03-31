@@ -72,7 +72,7 @@ $under.$erver = $under.$erver || {
     nav: function () {
         var $this = $(this),
             index = $this.parent().index(),
-            page = $this.data('page');
+            page = $this.attr('data-page');
         $under.$erver.navigate(page, index);
     },
 
@@ -82,6 +82,7 @@ $under.$erver = $under.$erver || {
 
     load: function () {
         var page = $under.$erver.getLocation().slice(1, -1);
+        console.log(page);
         if (page) {
             var $this = $('nav .links ul li a[href="/' + page + (page === '' ? '' : '/') + '"], nav .links ul li a[data-page=' + page + ']'),
             index = $this.parent().index();
@@ -97,7 +98,7 @@ $under.$erver = $under.$erver || {
         $.each($('nav .links ul li a[href]:not([href^="https"])'), function (index, elem) {
             var $this = $(this),
                 page = $this.attr('href').slice(1, -1);
-            $this.removeAttr('href').data('page', page).on('click', $under.$erver.nav);
+            $this.removeAttr('href').attr('data-page', page).on('click', $under.$erver.nav);
         });
     },
 
