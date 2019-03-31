@@ -118,7 +118,12 @@ $under.player = $under.player || {
     },
 
     load: function (src,title) {
-        if (src) {
+        console.log('_____________');
+        console.log(src);
+        console.log($under.player.element.src);
+        console.log($under.player.element.src.replace(/.*?mp3/, ''));
+        console.log('_____________');
+        if (src && $under.player.element.src.replace(/.*?mp3/, '') !== src) {
             $under.player.element.src = src;
             $under.player.element.load();
             $('.player .title p').text(title);
