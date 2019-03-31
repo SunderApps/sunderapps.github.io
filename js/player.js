@@ -118,11 +118,6 @@ $under.player = $under.player || {
     },
 
     load: function (src,title) {
-        console.log('_____________');
-        console.log(src);
-        console.log($under.player.element.src);
-        console.log($under.player.element.src.replace(/.*?[.]com/, ''));
-        console.log('_____________');
         if (src && $under.player.element.src.replace(/.*?[.]com/, '') !== src) {
             $under.player.element.src = src;
             $under.player.element.load();
