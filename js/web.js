@@ -3,8 +3,6 @@ $under.web = $under.web || {
         $.each($('.web-grid iframe'), function (index, iframe) {
             $(iframe).css({
                 height: ($(iframe).width() / 1.77942539388) + 'px',
-                top: -($(iframe).width() / 1.77942539388) + 'px',
-                marginBottom: -($(iframe).width() / 1.77942539388) + 'px'
             });
         });
     },
