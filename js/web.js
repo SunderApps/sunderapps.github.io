@@ -2,7 +2,7 @@ $under.web = $under.web || {
     resize: function (e) {
         $.each($('.web-grid iframe'), function (index, iframe) {
             $(iframe).css({
-                height: ($(iframe).width() / 1.77942539388) + 'px',
+                height: ($(iframe).width() / 1.77942539388) + 'px'
             });
         });
     },
