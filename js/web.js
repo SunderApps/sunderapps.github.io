@@ -15,6 +15,7 @@ $under.web = $under.web || {
         console.log('vars');
         $('.web-grid iframe').attr('src', '');
         if (checked) {
+            console.log($iframe);
             console.log('checked');
             $iframe.attr('src', $iframe.data('src'));
         } else {
