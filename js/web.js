@@ -12,10 +12,13 @@ $under.web = $under.web || {
         var $this = $(this),
             checked = $this.is(':checked'),
             $iframe = $this.parent().parent().find('iframe');
+        console.log('vars');
         $('.web-grid iframe').attr('src', '');
         if (checked) {
+            console.log('checked');
             $iframe.attr('src', $iframe.data('src'));
         } else {
+            console.log('unchecked');
             $iframe.attr('src', '');
         }
     },
