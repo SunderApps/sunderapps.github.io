@@ -8,9 +8,10 @@ $under.web = $under.web || {
     },
 
     update: function (e) {
+        console.log('update');
         var $this = $(this),
             checked = $this.is(':checked'),
-            $iframe = $this.parent().parent().siblings('iframe');
+            $iframe = $this.parent().parent().find('iframe');
         $('.web-grid iframe').attr('src', '');
         if (checked) {
             $iframe.attr('src', $iframe.data('src'));
