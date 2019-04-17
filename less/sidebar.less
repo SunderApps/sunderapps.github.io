@@ -8,7 +8,7 @@ nav {
     width: 60px;
     max-width: 500px;
     height: 100vh;
-    transition: 300ms;
+    transition: width 300ms, left 300ms;
     background-color: @black;
     z-index: 999;
     overflow: hidden;
@@ -192,6 +192,42 @@ nav {
                     }
                 }
             }
+        }
+    }
+}
+
+@media(max-width: 320px) {
+    nav {
+        left: -60px;
+
+        .head {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            background-color: black;
+
+            .toggle {
+                span {
+                    border-top-right-radius: 2px;
+                    border-bottom-left-radius: 2px;
+                    &::before {
+                        transform: matrix(1, 0, -1, 1, 2, 0);
+                        border-top-left-radius: 2px;
+                    }
+                    &::after {
+                        transform: matrix(1, 0, -1, 1, -2, 0);
+                        border-bottom-right-radius: 2px;
+                    }
+                }
+            }
+        }
+
+        .links {
+            padding-top: 60px;
+        }
+
+        &.show {
+            left: 0px;
         }
     }
 }
