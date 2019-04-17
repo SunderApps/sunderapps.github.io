@@ -11,7 +11,7 @@ $under.web = $under.web || {
         console.log('update');
         var $this = $(this),
             checked = $this.is(':checked'),
-            $iframe = $this.parent().parent().find('.image').find('iframe');
+            $iframe = $this.parent().parent().siblings().find('iframe');
         console.log('vars');
         $('.web-grid iframe').attr('src', '');
         if (checked) {
