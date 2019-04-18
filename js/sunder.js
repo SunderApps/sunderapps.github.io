@@ -58,7 +58,25 @@ var $under = $under || {
 
     init: function () {
         $under.events();
-		$under.storage.init();
+        $under.storage.init();
+        
+        ///* DEBUGGING FOR SUNDER FUNCTIONS
+        $.post(
+            'https://sunder-functions20190319082035.azurewebsites.net/api/SendEmail',
+            {
+                'name': 'Sam Underwood',
+                'email': 'sam@sunderapps.com',
+                'subject': 'Testing',
+                'message': 'Please work!'
+            }
+        ).done(function (data) {
+            console.log('success!');
+            console.log(data);
+        }).error(function (data) {
+            console.log('error!');
+            console.log(data);
+        });
+        //*/
     }
 };
 
