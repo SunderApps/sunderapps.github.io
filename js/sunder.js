@@ -72,7 +72,7 @@ var $under = $under || {
         ).done(function (data) {
             console.log('success!');
             console.log(data);
-        }).error(function (data) {
+        }).fail(function (data) {
             console.log('error!');
             console.log(data);
         });
