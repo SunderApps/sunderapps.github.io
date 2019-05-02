@@ -132,7 +132,6 @@ var $under = $under || {
         $under.events();
         $under.storage.init();
         $under.contact.init();
-        $under.background.init();
     }
 };
 
