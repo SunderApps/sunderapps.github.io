@@ -87,6 +87,10 @@ var $under = $under || {
                     $img = $($($container.children()[0]).children()[index]).find('img'),
                     src = $img.data('background') || $img.attr('src') || $under.background.lastSrc,
                     pos = $img.data('position') || $under.background.lastPos;
+                console.log(index);
+                console.log($img);
+                console.log(src);
+                console.log(pos);
                 $under.background.lastSrc = src;
                 $under.background.lastPos = pos;
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~$under.background.actives.indexOf(src)) {
