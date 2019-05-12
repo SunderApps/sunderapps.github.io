@@ -82,9 +82,7 @@ var $under = $under || {
         actives: [],
         update: function () {
             var $container = $('.container.open:not(.hide)');
-            console.log('background-update');
             if ($container) {
-                console.log($container);
                 var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height()),
                     $img = $($($container.children()[0]).children()[index]).find('img'),
                     src = $img.data('background') || $img.attr('src') || $under.background.lastSrc,
