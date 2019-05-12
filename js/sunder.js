@@ -121,6 +121,7 @@ var $under = $under || {
         
         init: function () {
             $under.background.events();
+            $under.background.openPage();
         }
     },
 
