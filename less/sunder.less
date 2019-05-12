@@ -39,7 +39,22 @@ body {
     background: -webkit-linear-gradient(left, #343a40 0%,#343a40 45%,@sunder-green 50%,#343a40 55%,#343a40 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #343a40 0%,#343a40 45%,@sunder-green 50%,#343a40 55%,#343a40 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#343a40', endColorstr='#343a40',GradientType=1 ); /* IE6-9 */
-} 
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://i.imgur.com/7edvN0R.jpg');
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    z-index: -2;
+    pointer-events: none;
+}
 
 .logo {
     display: flex;
