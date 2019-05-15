@@ -92,12 +92,10 @@ var $under = $under || {
                     var dist = $(e).offset().top;
                     console.log(dist);
                 });
-                /*
                 var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height()),
                     $img = $($($container.children()[0]).children()[index]).find('img'),
                     src = $img.data('background') || $img.attr('src') || $under.background.lastSrc,
                     pos = $img.data('position') || $under.background.lastPos;
-                */
                 $under.background.lastSrc = src;
                 $under.background.lastPos = pos;
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~$under.background.actives.indexOf(src)) {
