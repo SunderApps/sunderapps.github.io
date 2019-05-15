@@ -85,10 +85,19 @@ var $under = $under || {
             if ($container) {
                 var images = $container.find('img.bg');
                 console.log(images);
+                var closest = images[0],
+                    closestDist = 0;
+                console.log($container.scrollTop());
+                $.each(images, (i, e)=>{
+                    var dist = $(e).offset().top;
+                    console.log(dist);
+                });
+                /*
                 var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height()),
                     $img = $($($container.children()[0]).children()[index]).find('img'),
                     src = $img.data('background') || $img.attr('src') || $under.background.lastSrc,
                     pos = $img.data('position') || $under.background.lastPos;
+                */
                 $under.background.lastSrc = src;
                 $under.background.lastPos = pos;
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~$under.background.actives.indexOf(src)) {
