@@ -83,26 +83,26 @@ var $under = $under || {
         update: function () {
             var $container = $('.container.open:not(.hide)');
             if ($container) {
-                var images = $container.find('img.bg');
-                console.log(images);
-                var closest = images[0],
-                    closestDist = 0;
-                console.log($container.scrollTop());
+                var images = $container.find('img.bg'),
+                    closest = 0,
+                    closestDist = 1000000;
                 $.each(images, (i, e)=>{
-                    var dist = $(e).offset().top;
-                    console.log(dist);
+                    var dist = Math.abs($(e).offset().top - ($(window).height() - 2) / 2);
+                    if (dist < closestDist) {
+                        closestDist = dist;
+                        closest = i;
+                    }
                 });
-                var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height()),
-                    $img = $($($container.children()[0]).children()[index]).find('img'),
+                var $img = $(images[closest]),
                     src = $img.data('background') || $img.attr('src') || $under.background.lastSrc,
                     pos = $img.data('position') || $under.background.lastPos;
                 $under.background.lastSrc = src;
                 $under.background.lastPos = pos;
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~$under.background.actives.indexOf(src)) {
-                    $under.background.elements[index] = $under.background.elements[index] || $('<div></div>').addClass('background');    
-                    $under.background.actives[index] = src;
-                    $('body').append($under.background.elements[index]);
-                    $under.background.elements[index].css({
+                    $under.background.elements[closest] = $under.background.elements[closest] || $('<div></div>').addClass('background');    
+                    $under.background.actives[closest] = src;
+                    $('body').append($under.background.elements[closest]);
+                    $under.background.elements[closest].css({
                         backgroundImage: 'url(' + src + ')',
                         backgroundPosition: pos
                     }).animate({
@@ -112,9 +112,9 @@ var $under = $under || {
                             backgroundImage: 'url(' + src + ')',
                             backgroundPosition: pos
                         });
-                        $under.background.elements[index].remove();
-                        $under.background.elements[index] = null;
-                        $under.background.actives[index] = null;
+                        $under.background.elements[closest].remove();
+                        $under.background.elements[closest] = null;
+                        $under.background.actives[closest] = null;
                     });
                 }
             }
