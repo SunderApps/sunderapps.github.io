@@ -25,7 +25,6 @@ $under.history = $under.history || {
         var state = e.originalEvent.state,
             page = 'home',
             index = -1;
-            console.log(state);
         if (state) {
             page = state.page.substr(1, state.page.length - 2),
             index = state.index;

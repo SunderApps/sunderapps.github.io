@@ -1,5 +1,6 @@
 var $under = $under || {};
 $under.$erver = $under.$erver || {
+    current: 0,
     cache: {
         content: [],
         head: [],
@@ -53,19 +54,22 @@ $under.$erver = $under.$erver || {
     },
 
     navigate: function (page, index) {
-        $($under.$erver).trigger('$-page-start');
-        $('.container.open').addClass('hide')
-        setTimeout(function () { $('.container.open.hide').removeClass('open').removeClass('hide'); }, 300);
-        if (index !== -1) {
-            if ($under.$erver.cache.content[index]) {
-                $under.$erver.open(index);
-            } else {
-                $under.$erver.get(page, index);
+        if ($under.$erver.current !== index) {
+            $under.$erver.current = index;
+            $($under.$erver).trigger('$-page-start');
+            $('.container.open').addClass('hide')
+            setTimeout(function () { $('.container.open.hide').removeClass('open').removeClass('hide'); }, 300);
+            if (index !== -1) {
+                if ($under.$erver.cache.content[index]) {
+                    $under.$erver.open(index);
+                } else {
+                    $under.$erver.get(page, index);
+                }
+                var pageTitle = '',
+                    pageTitles = page.split('-');
+                $.each(pageTitles, (index, title) => pageTitle += title.charAt(0).toUpperCase() + page.slice(1).toLowerCase());
+                $under.history.push($under.history.title + ' | ' + pageTitle, '/' + page + '/', index);    
             }
-            var pageTitle = '',
-                pageTitles = page.split('-');
-            $.each(pageTitles, (index, title) => pageTitle += title.charAt(0).toUpperCase() + page.slice(1).toLowerCase());
-            $under.history.push($under.history.title + ' | ' + pageTitle, '/' + page + '/', index);    
         }
     },
 
