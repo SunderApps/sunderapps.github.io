@@ -57,14 +57,14 @@ var $under = $under || {
         send: function (name, subject, message) {
             $.ajax('https://sunder-functions20190319082035.azurewebsites.net/api/SendEmail', {
                 method: 'POST',
-                contentType: 'text/plain',
+                contentType: 'json',
                 crossDomain: true,
-                data: {
+                data: JSON.stringify({
                     'name': 'Sam Underwood',
                     'email': 'sam@sunderapps.com',
                     'subject': 'Testing',
                     'message': 'Please work!'
-                },
+                }),
                 success: function (data) {
                     alert('Email sent successfully!');
                     console.log(data);
