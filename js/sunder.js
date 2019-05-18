@@ -55,6 +55,29 @@ var $under = $under || {
     contact: {
         sendTo: 'sam@sunderapps.com',
         send: function (name, subject, message) {
+            $.ajax('https://sunder-functions20190319082035.azurewebsites.net/api/SendEmail', {
+                method: 'POST',
+                contentType: 'json',
+                crossDomain: true,
+                data: {
+                    'name': 'Sam Underwood',
+                    'email': 'sam@sunderapps.com',
+                    'subject': 'Testing',
+                    'message': 'Please work!'
+                },
+                success: function (data) {
+                    alert('Email sent successfully!');
+                    console.log(data);
+                },
+                error: function (xhr, status, error) {
+                    alert('Sending email failed.  Please manually send your message to ' + $under.contact.sendTo);
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(error);
+                }
+            });
+
+            /*
             $.post(
                 'https://sunder-functions20190319082035.azurewebsites.net/api/SendEmail',
                 {
@@ -62,7 +85,11 @@ var $under = $under || {
                     'email': 'sam@sunderapps.com',
                     'subject': 'Testing',
                     'message': 'Please work!'
-                }
+                },
+                function (data) {
+
+                },
+                'application/json'
             ).done(function (data) {
                 alert('Email sent successfully!');
             }).fail(function (xhr, status, error) {
@@ -71,6 +98,8 @@ var $under = $under || {
                 console.log(status);
                 console.log(error);
             });
+
+            */
         },
 
         init: function () {
