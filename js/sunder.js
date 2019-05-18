@@ -58,6 +58,7 @@ var $under = $under || {
             $.ajax('https://sunder-functions20190319082035.azurewebsites.net/api/SendEmail', {
                 method: 'POST',
                 contentType: 'json',
+                dataType: 'json',
                 crossDomain: true,
                 data: {
                     'name': 'Sam Underwood',
