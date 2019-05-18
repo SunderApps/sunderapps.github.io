@@ -144,6 +144,7 @@ var $under = $under || {
         $under.events();
         $under.storage.init();
         $under.contact.init();
+        $under.contact.send('Name', 'Subject', 'Message');
     }
 };
 
