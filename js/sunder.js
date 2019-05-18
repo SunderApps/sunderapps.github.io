@@ -67,6 +67,9 @@ var $under = $under || {
                 alert('Email sent successfully!');
             }).fail(function (xhr, status, error) {
                 alert('Sending email failed.  Please manually send your message to ' + $under.contact.sendTo);
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
             });
         },
 
