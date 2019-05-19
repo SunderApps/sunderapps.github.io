@@ -53,17 +53,20 @@ var $under = $under || {
     },
 
     contact: {
-        sendTo: 'sam@sunderapps.com',
-        send: function (name, subject, message) {
+        sendToEmail: 'sam@sunderapps.com',
+        sendToName: 'Sunder Applications',
+        send: function (name, email, subject, message) {
             $.ajax('https://sunder-functions20190319082035.azurewebsites.net/api/SendEmail', {
                 method: 'POST',
                 contentType: 'json',
                 crossDomain: true,
                 data: JSON.stringify({
-                    'name': 'Sam Underwood',
-                    'email': 'sam@sunderapps.com',
-                    'subject': 'Testing',
-                    'message': 'Please work!'
+                    'name': name,
+                    'email': email,
+                    'subject': subject,
+                    'message': message,
+                    'sendToEmail': $under.contact.sendToEmail,
+                    'sendToName': $under.contact.sendToName
                 }),
                 success: function (data) {
                     alert('Email sent successfully!');
@@ -91,10 +94,6 @@ var $under = $under || {
                     $img = $($($container.children()[0]).children()[index]).find('img'),
                     src = $img.data('background') || $img.attr('src') || $under.background.lastSrc,
                     pos = $img.data('position') || $under.background.lastPos;
-                console.log(index);
-                console.log($img);
-                console.log(src);
-                console.log(pos);
                 $under.background.lastSrc = src;
                 $under.background.lastPos = pos;
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~$under.background.actives.indexOf(src)) {
@@ -148,7 +147,6 @@ var $under = $under || {
         $under.events();
         $under.storage.init();
         $under.contact.init();
-        $under.contact.send('Name', 'Subject', 'Message');
     }
 };
 

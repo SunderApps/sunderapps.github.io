@@ -53,20 +53,23 @@ var $under = $under || {
     },
 
     contact: {
-        sendTo: 'sam@sunderapps.com',
-        send: function (name, subject, message) {
+        sendToEmail: 'sam@sunderapps.com',
+        sendToName: 'Sunder Applications',
+        send: function (name, email, subject, message) {
             $.ajax('https://sunder-functions20190319082035.azurewebsites.net/api/SendEmail', {
                 method: 'POST',
                 contentType: 'json',
                 crossDomain: true,
                 data: JSON.stringify({
-                    'name': 'Sam Underwood',
-                    'email': 'sam@sunderapps.com',
-                    'subject': 'Testing',
-                    'message': 'Please work!'
+                    'name': name,
+                    'email': email,
+                    'subject': subject,
+                    'message': message,
+                    'sendToEmail': $under.contact.sendToEmail,
+                    'sendToName': $under.contact.sendToName
                 }),
                 success: function (data) {
-                    alert('Email sent successfully!');
+                    alert('Message sent successfully!');
                 },
                 error: function (xhr, status, error) {
                     alert('Sending email failed.  Please manually send your message to ' + $under.contact.sendTo);
