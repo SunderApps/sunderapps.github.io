@@ -64,7 +64,7 @@ $under.$erver = $under.$erver || {
             }
             var pageTitle = '',
                 pageTitles = page.split('-');
-            $.each(pageTitles, (index, title) => pageTitle += title.charAt(0).toUpperCase() + page.slice(1).toLowerCase());
+            $.each(pageTitles, (index, title) => pageTitle += title.charAt(0).toUpperCase() + title.slice(1).toLowerCase() + ' ');
             $under.history.push($under.history.title + ' | ' + pageTitle, '/' + page + '/', index);    
         }
     },
