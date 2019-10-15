@@ -402,7 +402,58 @@ export class WebComponent implements OnInit {
       ]
     },
     {
-
+      url: 'https://newsinteractive.post-gazette.com/fish-fries/',
+      title: 'Fish Fries Map 2018',
+      owner: 'Post-Gazette',
+      description: 'Find a fish fry for the 2018 Lent season.',
+      date: new Date(2018, 3),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '5.7'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '1.10.2'
+        },
+        {
+          lib: 'Leaflet',
+          version: '1.0.3'
+        },
+        {
+          lib: 'Leaflet Extra Markers',
+          version: '1.0.1'
+        },
+        {
+          lib: 'Google Tag Manager'
+        },
+        {
+          lib: 'Chartbeat'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.0.0'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '4.7.0'
+        }
+      ]
     },
     {
       url: 'https://newsinteractive.post-gazette.com/hq2/',
@@ -453,18 +504,691 @@ export class WebComponent implements OnInit {
           version: '4.7.0'
         }
       ]
-    }
-    /*,
+    },
     {
-      url:string,
-        title:string,
-        owner:string,
-        description:string,
-        date:Date,
-        serverLibs:Lib[],
-        clientLibs:Lib[],
-        styleLibs:Lib[]
-    }*/
+      url: 'https://newsinteractive.post-gazette.com/in-the-lead/',
+      title: 'In The Lead 2018',
+      owner: 'Post-Gazette',
+      description: 'The landing page for the Post-Gazette\'s annual special section, In The Lead (2018 Edition).',
+      date: new Date(2018, 5),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '5.7'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.2.1'
+        },
+        {
+          lib: 'Google Tag Manager'
+        },
+        {
+          lib: 'Chartbeat'
+        },
+        {
+          lib: 'Brightcove'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.0.0'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '4.7.0'
+        }
+      ]
+    },
+    {
+      url: '',
+      title: 'Hype Manager',
+      owner: 'Post-Gazette',
+      description: 'Organizes and prepares Tumult Hype files for embedding in Post-Gazette NewsInteractive and NewsSlide.',
+      date: new Date(2018, 6),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '5.7'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'jQuery UI',
+          version: '1.12.1'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.0.0'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '4.7.0'
+        }
+      ]
+    },
+    {
+      url: 'https://dr.dacierno.com',
+      title: 'Dr. D\'Acierno',
+      owner: 'Freelance',
+      description: 'Homepage of Dr. Dayna D\'Acierno, Dr. of Chiropractic.',
+      date: new Date(2018, 7),
+      serverLibs: [
+        {
+          lib: 'C#'
+        },
+        {
+          lib: 'ASP.NET Core',
+          version: '2.0'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.2.1'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.0.0'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '4.7.0'
+        }
+      ]
+    },
+    {
+      url: '',
+      title: 'MapMaker 2',
+      owner: 'Post-Gazette',
+      description: 'MapMaker 1 but better!',
+      date: new Date(2018, 9),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '7.2',
+        },
+        {
+          lib: 'Slim',
+          version: '3.12'
+        },
+        {
+          lib: 'Slim-Session',
+          version: '3.6.1'
+        },
+        {
+          lib: 'Twig',
+          version: '2.7.2'
+        },
+        {
+          lib: 'Twig-View',
+          version: '2.4'
+        },
+        {
+          lib: 'Doctrine ORM',
+          version: '2.6.3'
+        },
+        {
+          lib: 'Google API Client',
+          version: '2.2.2'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'Slick',
+          version: '1.9.0'
+        },
+        {
+          lib: 'Quill',
+          version: '1.3.6'
+        },
+        {
+          lib: 'Leaflet',
+          version: '1.3.1'
+        },
+        {
+          lib: 'Leaflet Providers',
+          version: '1.3.1'
+        },
+        {
+          lib: 'Leaflet Extra Markers',
+          version: '1.0.8'
+        },
+        {
+          lib: 'Leaflet Gesture Handling',
+          version: '1.1.8'
+        },
+        {
+          lib: 'Leaflet Responsive Popup',
+          version: '0.6.3'
+        },
+        {
+          lib: 'Leaflet Marker Cluster',
+          version: '1.4.1'
+        },
+        {
+          lib: 'Leaflet PM',
+          version: '0.25.0'
+        },
+        {
+          lib: 'Location API'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'LESS'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.1.1'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '4.7.0'
+        },
+      ]
+    },
+    {
+      url: 'https://newsinteractive.post-gazette.com/consumer-alerts/',
+      title: 'Consumer Alerts Map',
+      owner: 'Post-Gazette',
+      description: 'What restaurants in the local Pittsburgh area have had health warnings and violations?  Find out here!',
+      date: new Date(2018, 10),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '7.2',
+        },
+        {
+          lib: 'Slim',
+          version: '3.12'
+        },
+        {
+          lib: 'Slim-Session',
+          version: '3.6.1'
+        },
+        {
+          lib: 'Twig',
+          version: '2.7.2'
+        },
+        {
+          lib: 'Twig-View',
+          version: '2.4'
+        },
+        {
+          lib: 'Doctrine ORM',
+          version: '2.6.3'
+        },
+        {
+          lib: 'Google API Client',
+          version: '2.2.2'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'Slick',
+          version: '1.9.0'
+        },
+        {
+          lib: 'Quill',
+          version: '1.3.6'
+        },
+        {
+          lib: 'Leaflet',
+          version: '1.3.1'
+        },
+        {
+          lib: 'Leaflet Extra Markers',
+          version: '1.0.8'
+        },
+        {
+          lib: 'Leaflet Gesture Handling',
+          version: '1.1.8'
+        },
+        {
+          lib: 'Leaflet Responsive Popup',
+          version: '0.6.3'
+        },
+        {
+          lib: 'Leaflet Marker Cluster',
+          version: '1.4.1'
+        },
+        {
+          lib: 'Location API'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'LESS'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.1.1'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '4.7.0'
+        },
+      ]
+    },
+    {
+      url: 'https://newsinteractive.post-gazette.com/pittsburgh-squirrel-hill-synagogue-massacre/',
+      title: 'Unbroken',
+      owner: 'Post-Gazette',
+      description: '[Pulitzer Prize Winner] The Tree of Life mass shooting wrought death and anguish, but also fierce resolve.',
+      date: new Date(2018, 11),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '5.7'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'ScrollMagic',
+          version: '2.0.6'
+        },
+        {
+          lib: 'GSAP TweenMax',
+          version: '2.0.2'
+        },
+        {
+          lib: 'WebVTT'
+        },
+        {
+          lib: 'Google Tag Manager'
+        },
+        {
+          lib: 'Chartbeat'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'LESS'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '5.5.0'
+        }
+      ]
+    },
+    {
+      url: 'https://www.brahctopus.com',
+      title: 'Brahctopus',
+      owner: 'Freelance',
+      description: 'The official website of local Pittsburgh band, Brahctopus.  Includes an audio visualizer and video game.',
+      date: new Date(2019, 1),
+      serverLibs: [
+        {
+          lib: 'C#'
+        },
+        {
+          lib: 'ASP.NET Core',
+          version: '2.0'
+        },
+        {
+          lib: 'Square Connect API'
+        },
+        {
+          lib: 'MailChimp API'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'Photoswipe',
+          version: '4.1.2'
+        },
+        {
+          lib: 'WebGL'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.2.1'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '5.4.1'
+        }
+      ]
+    },
+    {
+      url: 'https://www.sunderapps.com',
+      title: 'Sunder',
+      owner: 'Freelance',
+      description: 'My website!',
+      date: new Date(2019, 2),
+      serverLibs: [
+        {
+          lib: 'Azure Functions'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'Sunder Server',
+          version: '0.1.0'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '5.7.2'
+        }
+      ]
+    },
+    {
+      url: 'https://newsinteractive.post-gazette.com/business-of-pittsburgh-monthly-report/',
+      title: 'Business of Pittsburgh',
+      owner: 'Post-Gazette',
+      description: 'The Business of Pittsburgh - a monthly report on the top Pittsburgh businesses and business leaders.',
+      date: new Date(2019, 2),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '7.2'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'Slick',
+          version: '1.9.0'
+        },
+        {
+          lib: 'Google Tag Manager'
+        },
+        {
+          lib: 'Chartbeat'
+        },
+        {
+          lib: 'Brightcove'
+        },
+        {
+          lib: 'Hearken'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'LESS'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '5.7.2'
+        }
+      ]
+    },
+    {
+      url: 'https://newsinteractive.post-gazette.com/fish-fries/2019/',
+      title: 'Fish Fries Map 2019',
+      owner: 'Post-Gazette',
+      description: 'Find a fish fry for the 2019 Lent season!',
+      date: new Date(2019, 3),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '7.2'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '1.11.2'
+        },
+        {
+          lib: 'Leaflet',
+          version: '1.0.3'
+        },
+        {
+          lib: 'Google Tag Manager'
+        },
+        {
+          lib: 'Chartbeat'
+        },
+        {
+          lib: 'Gigya Comments'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'LESS'
+        },
+        {
+          lib: 'Bootstrap',
+          version: '4.0.0'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '4.7.0'
+        }
+      ]
+    },
+    {
+      url: 'https://newsinteractive.post-gazette.com/pittsburgh-pirates-broadcaster-bingo-game/',
+      title: 'Pittsburgh Pirates Broadcaster Bingo',
+      owner: 'Post-Gazette',
+      description: 'Play BINGO while watching the Pittsburgh Pirates broadcasters.',
+      date: new Date(2019, 4),
+      serverLibs: [
+        {
+          lib: 'PHP',
+          version: '7.2'
+        }
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        },
+        {
+          lib: 'jQuery',
+          version: '3.3.1'
+        },
+        {
+          lib: 'Sunder Server',
+          version: '0.1.0'
+        },
+        {
+          lib: 'HTML2Canvas',
+          version: '0.5.0-beta4'
+        },
+        {
+          lib: 'FileSaver',
+          version: '1.3.8'
+        },
+        {
+          lib: 'Google Tag Manager'
+        },
+        {
+          lib: 'Chartbeat'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        },
+        {
+          lib: 'LESS'
+        },
+        {
+          lib: 'Font-Awesome',
+          version: '5.7.2'
+        }
+      ]
+    },
+    {
+      url: '',
+      title: '',
+      owner: 'Post-Gazette',
+      description: '',
+      date: new Date(),
+      serverLibs: [
+
+      ],
+      clientLibs: [
+        {
+          lib: 'JS'
+        }
+      ],
+      styleLibs: [
+        {
+          lib: 'HTML',
+          version: '5'
+        },
+        {
+          lib: 'CSS',
+          version: '3'
+        }
+      ]
+    },
   ]
   constructor() { }
 
